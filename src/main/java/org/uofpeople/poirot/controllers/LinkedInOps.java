@@ -9,11 +9,17 @@ import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.uofpeople.poirot.commons.Utilities;
+import org.uofpeople.poirot.dmos.PersonDMO;
+import org.uofpeople.poirot.pojos.Graph;
 import org.uofpeople.poirot.pojos.LinkedInPerson;
-
+import org.uofpeople.poirot.services.LIDAService;
 import java.io.IOException;
-
+import java.util.List;
+import java.util.Optional;
+import static org.uofpeople.poirot.commons.Constants.GRAPH;
 import static org.uofpeople.poirot.commons.Constants.RESULT_LIMIT;
+
 
 /**
  * Performs search on linkedin using DDG
@@ -22,10 +28,13 @@ import static org.uofpeople.poirot.commons.Constants.RESULT_LIMIT;
  */
 @Service
 public class LinkedInOps {
+
     private final Logger logger = LoggerFactory.getLogger(LinkedInOps.class);
     private final ObjectMapper objectMapper = new ObjectMapper();
+    private LIDAService lidaService;
 
-    public LinkedInOps() {
+    public LinkedInOps(LIDAService lidaService) {
+        this.lidaService = lidaService;
     }
 
     public void runSearch(String query) {
@@ -48,18 +57,22 @@ public class LinkedInOps {
                         Elements scrappedData = liDoc.getElementsByTag("script");
 
                         scrappedData.stream().forEach( el -> {
-                            if(el.toString().contains("@graph")) {
+                            if(el.toString().contains(GRAPH)) {
                                 String payload = el.toString().substring(el.toString().indexOf("{"), el.toString().lastIndexOf("}") + 1);
                                 logger.info(payload);
+
                                 try {
                                     LinkedInPerson linkedInPerson = objectMapper.readValue(payload, LinkedInPerson.class);
-                                    logger.info(linkedInPerson.toString());
+                                    Optional<Graph> person = linkedInPerson.getGraph().stream().filter(gp -> gp.getType().equals("Person")).findFirst();
+
+                                    if(person.isPresent()) {
+                                        lidaService.create(Utilities.buildFrom(person.get(), title.attr("href")));
+                                    }
+
                                 } catch (JsonProcessingException e) {
                                     logger.error(e.getMessage());
                                 }
 
-                                //999 Request Denied
-                                logger.info("\nURL:" + title.attr("href"));
                                 logger.info("Title:" + title.text());
                                 logger.info("Snippet:" + result.getElementsByClass("result__snippet").first().text());
                             }
@@ -72,5 +85,14 @@ public class LinkedInOps {
         } catch (IOException e) {
             logger.error("Error while searching for linked In {}", query, e);
         }
+    }
+
+    /**
+     * Gets all saved LI Persons
+     *
+     * @return
+     */
+    public List<PersonDMO> getAllPersons() {
+        return lidaService.findAll();
     }
 }
