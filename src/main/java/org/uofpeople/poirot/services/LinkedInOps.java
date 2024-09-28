@@ -1,4 +1,4 @@
-package org.uofpeople.poirot.controllers;
+package org.uofpeople.poirot.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,7 +13,7 @@ import org.uofpeople.poirot.commons.Utilities;
 import org.uofpeople.poirot.dmos.PersonDMO;
 import org.uofpeople.poirot.pojos.Graph;
 import org.uofpeople.poirot.pojos.LinkedInPerson;
-import org.uofpeople.poirot.services.LIDAService;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
@@ -27,7 +27,7 @@ import static org.uofpeople.poirot.commons.Constants.RESULT_LIMIT;
  * curl 'https://duckduckgo.com/?q=site:linkedin.com "Jon Snow"&t=newext&atb=v300-1'
  */
 @Service
-public class LinkedInOps {
+public class LinkedInOps implements Operations {
 
     private final Logger logger = LoggerFactory.getLogger(LinkedInOps.class);
     private final ObjectMapper objectMapper = new ObjectMapper();
@@ -37,6 +37,7 @@ public class LinkedInOps {
         this.lidaService = lidaService;
     }
 
+    @Override
     public void runSearch(String query) {
         logger.info("Searching for linked In {}", query);
         // better scrap non js https://duckduckgo.com/html/?q=x

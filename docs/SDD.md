@@ -2,22 +2,63 @@
 
 ### Introduction
 
-It should explain the purpose of the document
-the scope of the project
-the intended audience
+#### Purpose of the document
+This document service as a blueprint of Poirot capstone project. It provides a solution for collecting person's information
+based on open source resources.
+
+#### Scope of the project
+A project exposes REST APIs for getting input from the researcher, exposes REST API to get collected data, performs
+person of interest searches on LinkedIn and Facebook social networks without requiring to be logged in or having 
+application tokens. Searches done anonymously. 
+
+#### Intended audience
+Any researcher who fights with misinformation and the spreading of fake news.
 
 ### Project Overview and Goals
 
-provide a high-level summary of the project. 
-Describe what the software is intended to do and the problems it aims to solve. 
-List the primary goals and objectives, highlighting the key features and functionalities.
-outline the project’s timeline, including major milestones and deliverables.
+A projects helps to the researches to gather information about person of interest. It helps
+to fight with spread of fake news or disinformation.
+
+A project uses: Java 17, gradle as a build tool, dockerd, Spring Boot framework, MongoDB as document database.
+Project length is about two month. 
+
+#### Milestones
+
+Week 1 - Definition of problem
+
+Week 2 - requirement gathering
+
+Week 3 - requirement and resource analysis
+
+Week 4 - Software Design Document
+
+Week 5 - Implementation
+
+Week 6 - Testing, Final Polishing, finalization of documentation
+
 
 ### System Functionality
 
-should list all the functionalities, often broken down into modules or components. 
-For each functionality, provide detailed descriptions, user stories, 
-or use cases to illustrate how users will interact with the system.
+Rest Controller - exposes REST APIs
+
+* GET  /linkedin/persons
+* POST /linkedin/persons
+* POST /facebook/persons
+* GET  /facebook/persons
+
+Services
+
+* LinkedIn service - provides functionality for making LinkedIn searches and gathering relevant information.
+* Facebook service - provide functionality for making Facebook searches and gathering relevant information.
+
+Repositories
+
+* LinkedIn repository services as an interface for making common operations related to mongoDB
+* Facebook repository services as an interface for making common operations related to mongoDB 
+
+* MongoDB - persists collected data, runs as a microservice, docker container.
+
+* Facebook-Scrapper-Page - performs facebook scrapping pages. Runs as a docker container.
 
 
 ###  Architectural Design
@@ -80,11 +121,10 @@ into database as a document.
 Spring Boot CRUD Repository abstracts database operations layer and makes its easier to make operations like: Update, Read,
 Create or Delete.
 
-
-
-
-
-
+* To gather facebook user profiles we create a docker container with [python fb page scrapper](https://pypi.org/project/facebook-page-info-scraper/)
+  As a mongodb runs as separate docker container, our python facebook scrapper will run also as separate docker container.
+  In order to run python scrapper we create Java process which will run 'docker exec 6ffda86269fa ulimit -a' and then grab the output
+  which is as a json file and handle it and save into facebook collection. However, only public profiles can be scrapped.
 
 
 Each module or component should have its own subsection, 

@@ -1,4 +1,4 @@
-package org.uofpeople.poirot.services;
+package org.uofpeople.poirot.controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,9 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.uofpeople.poirot.controllers.LinkedInOps;
 import org.uofpeople.poirot.dmos.PersonDMO;
 import org.uofpeople.poirot.pojos.PersonInfoRequest;
+import org.uofpeople.poirot.services.FBOps;
+import org.uofpeople.poirot.services.LinkedInOps;
 
 import java.util.List;
 
@@ -28,9 +29,11 @@ public class PersonInformationFetcher {
     private Logger logger = LoggerFactory.getLogger(PersonInformationFetcher.class);
 
     private LinkedInOps ops;
+    private FBOps fbOps;
 
-    public PersonInformationFetcher(LinkedInOps ops) {
+    public PersonInformationFetcher(LinkedInOps ops, FBOps fbOps) {
         this.ops = ops;
+        this.fbOps = fbOps;
     }
 
 
@@ -49,6 +52,6 @@ public class PersonInformationFetcher {
     @PostMapping("/facebook/persons")
     public void gatherInformationFacebook(@RequestBody PersonInfoRequest personInfoRequest) {
         logger.info("Fetching person information from facebook {}", personInfoRequest);
-        ops.runSearch(personInfoRequest.getFirstName() + " " + personInfoRequest.getLastName());
+        fbOps.runSearch(personInfoRequest.getFirstName() + " " + personInfoRequest.getLastName());
     }
 }
