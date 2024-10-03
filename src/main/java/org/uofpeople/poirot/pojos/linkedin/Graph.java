@@ -1,5 +1,5 @@
 
-package org.uofpeople.poirot.pojos;
+package org.uofpeople.poirot.pojos.linkedin;
 
 import java.util.LinkedHashMap;
 import java.util.List;

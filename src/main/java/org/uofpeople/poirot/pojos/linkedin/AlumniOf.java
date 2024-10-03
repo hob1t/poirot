@@ -1,5 +1,5 @@
 
-package org.uofpeople.poirot.pojos;
+package org.uofpeople.poirot.pojos.linkedin;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -13,21 +13,21 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "@type",
-    "interactionType",
     "name",
-    "userInteractionCount"
+    "url",
+    "member"
 })
 
-public class InteractionStatistic {
+public class AlumniOf {
 
     @JsonProperty("@type")
     private String type;
-    @JsonProperty("interactionType")
-    private String interactionType;
     @JsonProperty("name")
     private String name;
-    @JsonProperty("userInteractionCount")
-    private int userInteractionCount;
+    @JsonProperty("url")
+    private String url;
+    @JsonProperty("member")
+    private Member member;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -41,16 +41,6 @@ public class InteractionStatistic {
         this.type = type;
     }
 
-    @JsonProperty("interactionType")
-    public String getInteractionType() {
-        return interactionType;
-    }
-
-    @JsonProperty("interactionType")
-    public void setInteractionType(String interactionType) {
-        this.interactionType = interactionType;
-    }
-
     @JsonProperty("name")
     public String getName() {
         return name;
@@ -61,14 +51,24 @@ public class InteractionStatistic {
         this.name = name;
     }
 
-    @JsonProperty("userInteractionCount")
-    public int getUserInteractionCount() {
-        return userInteractionCount;
+    @JsonProperty("url")
+    public String getUrl() {
+        return url;
     }
 
-    @JsonProperty("userInteractionCount")
-    public void setUserInteractionCount(int userInteractionCount) {
-        this.userInteractionCount = userInteractionCount;
+    @JsonProperty("url")
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    @JsonProperty("member")
+    public Member getMember() {
+        return member;
+    }
+
+    @JsonProperty("member")
+    public void setMember(Member member) {
+        this.member = member;
     }
 
     @JsonAnyGetter

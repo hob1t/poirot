@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.uofpeople.poirot.dmos.PersonDMO;
-import org.uofpeople.poirot.pojos.PersonInfoRequest;
+import org.uofpeople.poirot.dmos.FBPersonDMO;
+import org.uofpeople.poirot.dmos.LIPersonDMO;
+import org.uofpeople.poirot.pojos.linkedin.PersonInfoRequest;
 import org.uofpeople.poirot.services.FBOps;
 import org.uofpeople.poirot.services.LinkedInOps;
 
@@ -44,7 +45,7 @@ public class PersonInformationFetcher {
     }
 
     @GetMapping("/linkedin/persons")
-    public ResponseEntity<List<PersonDMO>> getAllPersons() {
+    public ResponseEntity<List<LIPersonDMO>> getLIAllPersons() {
         logger.info("Fetching all persons");
         return new ResponseEntity<>(ops.getAllPersons(), HttpStatus.OK);
     }
@@ -53,5 +54,11 @@ public class PersonInformationFetcher {
     public void gatherInformationFacebook(@RequestBody PersonInfoRequest personInfoRequest) {
         logger.info("Fetching person information from facebook {}", personInfoRequest);
         fbOps.runSearch(personInfoRequest.getFirstName() + " " + personInfoRequest.getLastName());
+    }
+
+    @GetMapping("/facebook/persons")
+    public ResponseEntity<List<FBPersonDMO>> getAllFBPersons() {
+        logger.info("Fetching all persons");
+        return new ResponseEntity<>(fbOps.getAllPersons(), HttpStatus.OK);
     }
 }

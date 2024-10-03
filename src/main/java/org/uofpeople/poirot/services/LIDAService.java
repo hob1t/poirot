@@ -1,7 +1,7 @@
 package org.uofpeople.poirot.services;
 
 import org.springframework.stereotype.Service;
-import org.uofpeople.poirot.dmos.PersonDMO;
+import org.uofpeople.poirot.dmos.LIPersonDMO;
 import org.uofpeople.poirot.repositories.LIRepository;
 
 import java.util.List;
@@ -25,7 +25,7 @@ public class LIDAService {
      *
      * @return
      */
-    public PersonDMO create(PersonDMO personDMO) {
+    public LIPersonDMO create(LIPersonDMO personDMO) {
         if(personDMO.getId() == null || personDMO.getId().isEmpty()) {
             personDMO.setId(UUID.randomUUID().toString());
         }
@@ -34,13 +34,13 @@ public class LIDAService {
     }
 
     /**
-     * Looks up for {@link PersonDMO} by ID
+     * Looks up for {@link LIPersonDMO} by ID
      *
      * @param id - a search key.
      *
-     * @return {@link PersonDMO} or null
+     * @return {@link LIPersonDMO} or null
      */
-    public PersonDMO findById(String id) {
+    public LIPersonDMO findById(String id) {
         return liRepository.findById(id).orElse(null);
     }
 
@@ -49,7 +49,14 @@ public class LIDAService {
      *
      * @return
      */
-    public List<PersonDMO> findAll() {
+    public List<LIPersonDMO> findAll() {
         return liRepository.findAll();
+    }
+
+    /**
+     * Deletes all documents from the repository.
+     */
+    public void deleteAll() {
+        liRepository.deleteAll();
     }
 }

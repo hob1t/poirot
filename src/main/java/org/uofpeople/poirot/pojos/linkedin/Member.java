@@ -1,9 +1,8 @@
 
-package org.uofpeople.poirot.pojos;
+package org.uofpeople.poirot.pojos.linkedin;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -14,24 +13,17 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "@type",
-    "name",
-    "url",
-    "location",
-    "member"
+    "startDate",
+    "endDate"
 })
-
-public class WorksFor {
+public class Member {
 
     @JsonProperty("@type")
     private String type;
-    @JsonProperty("name")
-    private String name;
-    @JsonProperty("url")
-    private String url;
-    @JsonProperty("location")
-    private String location;
-    @JsonProperty("member")
-    private Fellow member;
+    @JsonProperty("startDate")
+    private int startDate;
+    @JsonProperty("endDate")
+    private int endDate;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -45,44 +37,24 @@ public class WorksFor {
         this.type = type;
     }
 
-    @JsonProperty("name")
-    public String getName() {
-        return name;
+    @JsonProperty("startDate")
+    public int getStartDate() {
+        return startDate;
     }
 
-    @JsonProperty("name")
-    public void setName(String name) {
-        this.name = name;
+    @JsonProperty("startDate")
+    public void setStartDate(int startDate) {
+        this.startDate = startDate;
     }
 
-    @JsonProperty("url")
-    public String getUrl() {
-        return url;
+    @JsonProperty("endDate")
+    public int getEndDate() {
+        return endDate;
     }
 
-    @JsonProperty("url")
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    @JsonProperty("location")
-    public String getLocation() {
-        return location;
-    }
-
-    @JsonProperty("location")
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    @JsonProperty("member")
-    public Fellow getMember() {
-        return member;
-    }
-
-    @JsonProperty("member")
-    public void setMember(Fellow member) {
-        this.member = member;
+    @JsonProperty("endDate")
+    public void setEndDate(int endDate) {
+        this.endDate = endDate;
     }
 
     @JsonAnyGetter

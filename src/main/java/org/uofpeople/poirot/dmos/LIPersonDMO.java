@@ -25,7 +25,7 @@ import java.util.List;
  */
 @Data
 @Document(collection = "linkedin")
-public class PersonDMO {
+public class LIPersonDMO {
     @Id
     private String id;
 

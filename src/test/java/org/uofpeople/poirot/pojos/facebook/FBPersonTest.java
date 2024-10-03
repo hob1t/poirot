@@ -51,7 +51,7 @@ class FBPersonTest {
 
     @Test
     void getSocialMediaLinks() {
-        fbPerson.setSocialMediaLinks(createLinkList());
+        fbPerson.setSocialMediaLinks(createLinkList().get(0));
         assertNotNull(fbPerson.getSocialMediaLinks());
     }
 
@@ -110,5 +110,16 @@ class FBPersonTest {
         ObjectMapper mapper = new ObjectMapper();
         FBPerson result = mapper.readValue(json, FBPerson.class);
         assertNotNull(result);
+
+        // real object
+        String realJson = "{\"data\":{\"email\":null,\"following\":null,\"location\":null,\"page_category\":\"The University of Illinois School of Music\",\"page_followers\":null,\"page_likes\":null,\"page_name\":\"Audrey Conklin\",\"page_rate\":null,\"page_review_number\":null,\"page_website\":null,\"phone_number\":null,\"social_media_links\":null},\"isError\":false,\"message\":\"Success\",\"statusCode\":200}\n";
+        FBPerson realResult = mapper.readValue(realJson, FBPerson.class);
+        assertNotNull(realResult);
+
+        // case 3: should be blank
+        String blank = "{\"page_name\":\"Page Not Found\",\"location\":\"None\",\"email\":\"None\",\"phone_number\":\"None\",\"social_media_links\":\"None\",\"page_website\":\"None\",\"page_category\":\"None\",\"page_likes\":\"None\",\"page_followers\":\"None\"}";
+        FBPerson blankResult = mapper.readValue(blank, FBPerson.class);
+        assertNotNull(blankResult);
+        assertTrue(FBPerson.isBlank(blankResult));
     }
 }

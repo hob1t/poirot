@@ -1,9 +1,8 @@
 
-package org.uofpeople.poirot.pojos;
+package org.uofpeople.poirot.pojos.linkedin;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -14,36 +13,48 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "@type",
-    "description"
+    "addressLocality",
+    "addressCountry"
 })
-
-public class Fellow {
+public class Address {
 
     @JsonProperty("@type")
-    private String _type;
-    @JsonProperty("description")
-    private String description;
+    private String type;
+    @JsonProperty("addressLocality")
+    private String addressLocality;
+    @JsonProperty("addressCountry")
+    private String addressCountry;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     @JsonProperty("@type")
-    public String get_type() {
-        return _type;
+    public String getType() {
+        return type;
     }
 
     @JsonProperty("@type")
-    public void set_type(String _type) {
-        this._type = _type;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    @JsonProperty("description")
-    public String getDescription() {
-        return description;
+    @JsonProperty("addressLocality")
+    public String getAddressLocality() {
+        return addressLocality;
     }
 
-    @JsonProperty("description")
-    public void setDescription(String description) {
-        this.description = description;
+    @JsonProperty("addressLocality")
+    public void setAddressLocality(String addressLocality) {
+        this.addressLocality = addressLocality;
+    }
+
+    @JsonProperty("addressCountry")
+    public String getAddressCountry() {
+        return addressCountry;
+    }
+
+    @JsonProperty("addressCountry")
+    public void setAddressCountry(String addressCountry) {
+        this.addressCountry = addressCountry;
     }
 
     @JsonAnyGetter

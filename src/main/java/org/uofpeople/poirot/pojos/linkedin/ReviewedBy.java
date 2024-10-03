@@ -1,9 +1,9 @@
 
-package org.uofpeople.poirot.pojos;
+package org.uofpeople.poirot.pojos.linkedin;
 
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -13,37 +13,36 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "@context",
-    "@graph"
+    "@type",
+    "name"
 })
+public class ReviewedBy {
 
-public class LinkedInPerson {
-
-    @JsonProperty("@context")
-    private String context;
-    @JsonProperty("@graph")
-    private List<Graph> graph;
+    @JsonProperty("@type")
+    private String type;
+    @JsonProperty("name")
+    private String name;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
-    @JsonProperty("@context")
-    public String getContext() {
-        return context;
+    @JsonProperty("@type")
+    public String getType() {
+        return type;
     }
 
-    @JsonProperty("@context")
-    public void setContext(String context) {
-        this.context = context;
+    @JsonProperty("@type")
+    public void setType(String type) {
+        this.type = type;
     }
 
-    @JsonProperty("@graph")
-    public List<Graph> getGraph() {
-        return graph;
+    @JsonProperty("name")
+    public String getName() {
+        return name;
     }
 
-    @JsonProperty("@graph")
-    public void setGraph(List<Graph> graph) {
-        this.graph = graph;
+    @JsonProperty("name")
+    public void setName(String name) {
+        this.name = name;
     }
 
     @JsonAnyGetter

@@ -1,8 +1,9 @@
 
-package org.uofpeople.poirot.pojos;
+package org.uofpeople.poirot.pojos.linkedin;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -15,10 +16,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "@type",
     "name",
     "url",
+    "location",
     "member"
 })
 
-public class AlumniOf {
+public class WorksFor {
 
     @JsonProperty("@type")
     private String type;
@@ -26,8 +28,10 @@ public class AlumniOf {
     private String name;
     @JsonProperty("url")
     private String url;
+    @JsonProperty("location")
+    private String location;
     @JsonProperty("member")
-    private Member member;
+    private Fellow member;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -61,13 +65,23 @@ public class AlumniOf {
         this.url = url;
     }
 
+    @JsonProperty("location")
+    public String getLocation() {
+        return location;
+    }
+
+    @JsonProperty("location")
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     @JsonProperty("member")
-    public Member getMember() {
+    public Fellow getMember() {
         return member;
     }
 
     @JsonProperty("member")
-    public void setMember(Member member) {
+    public void setMember(Fellow member) {
         this.member = member;
     }
 

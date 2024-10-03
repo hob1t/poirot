@@ -1,5 +1,5 @@
 
-package org.uofpeople.poirot.pojos;
+package org.uofpeople.poirot.pojos.linkedin;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -13,14 +13,21 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "@type",
-    "contentUrl"
+    "interactionType",
+    "name",
+    "userInteractionCount"
 })
-public class Image {
+
+public class InteractionStatistic {
 
     @JsonProperty("@type")
     private String type;
-    @JsonProperty("contentUrl")
-    private String contentUrl;
+    @JsonProperty("interactionType")
+    private String interactionType;
+    @JsonProperty("name")
+    private String name;
+    @JsonProperty("userInteractionCount")
+    private int userInteractionCount;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -34,14 +41,34 @@ public class Image {
         this.type = type;
     }
 
-    @JsonProperty("contentUrl")
-    public String getContentUrl() {
-        return contentUrl;
+    @JsonProperty("interactionType")
+    public String getInteractionType() {
+        return interactionType;
     }
 
-    @JsonProperty("contentUrl")
-    public void setContentUrl(String contentUrl) {
-        this.contentUrl = contentUrl;
+    @JsonProperty("interactionType")
+    public void setInteractionType(String interactionType) {
+        this.interactionType = interactionType;
+    }
+
+    @JsonProperty("name")
+    public String getName() {
+        return name;
+    }
+
+    @JsonProperty("name")
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @JsonProperty("userInteractionCount")
+    public int getUserInteractionCount() {
+        return userInteractionCount;
+    }
+
+    @JsonProperty("userInteractionCount")
+    public void setUserInteractionCount(int userInteractionCount) {
+        this.userInteractionCount = userInteractionCount;
     }
 
     @JsonAnyGetter

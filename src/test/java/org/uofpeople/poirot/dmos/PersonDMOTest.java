@@ -13,11 +13,11 @@ import static org.uofpeople.poirot.TestUtils.*;
 
 class PersonDMOTest {
 
-    private PersonDMO personDMO;
+    private LIPersonDMO personDMO;
 
     @BeforeEach
     void setUp() {
-        personDMO = new PersonDMO();
+        personDMO = new LIPersonDMO();
     }
 
     @Test

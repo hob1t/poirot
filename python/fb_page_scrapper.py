@@ -31,13 +31,14 @@ def index():
             scraper = FacebookPageInfoScraper(link=data.get('link'))
             page_info = scraper.get_page_info()
             logging.info(page_info)
-            # sys.stdout.write(json.dumps(page_info))
-            return jsonify(isError=False, message="Success", statusCode=200, data=page_info), 200
+            #sys.stdout.write(json.dumps(page_info))
+            return jsonify(page_info), 200
         except Exception as e:
-            logging.error(f"Error {e}", )
+            logging.error(f"Error {e}")
+            raise ValueError(f"Error {e}")
 
 
 if __name__ == "__main__":
     # page_to_scrap = sys.argv[1]
     # scrap_fb_page(page_to_scrap)
-    server.run(host='0.0.0.0', port=5001, debug=False)
+    server.run(host='0.0.0.0', port=5001, debug=True)

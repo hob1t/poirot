@@ -1,4 +1,4 @@
-package org.uofpeople.poirot.pojos;
+package org.uofpeople.poirot.pojos.linkedin;
 
 import lombok.Getter;
 import lombok.Setter;

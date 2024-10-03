@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import static org.uofpeople.poirot.commons.Constants.NONE;
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "page_name",
@@ -25,7 +27,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "following"
 })
 public class FBPerson {
-
     @JsonProperty("page_name")
     private String pageName;
     @JsonProperty("page_category")
@@ -35,7 +36,7 @@ public class FBPerson {
     @JsonProperty("page_website")
     private String pageWebsite;
     @JsonProperty("social_media_links")
-    private List<String> socialMediaLinks;
+    private String socialMediaLinks;
     @JsonProperty("phone_number")
     private String phoneNumber;
     @JsonProperty("location")
@@ -93,17 +94,17 @@ public class FBPerson {
     }
 
     @JsonProperty("social_media_links")
-    public Object getSocialMediaLinks() {
+    public String getSocialMediaLinks() {
         return socialMediaLinks;
     }
 
     @JsonProperty("social_media_links")
-    public void setSocialMediaLinks(List<String> socialMediaLinks) {
+    public void setSocialMediaLinks(String socialMediaLinks) {
         this.socialMediaLinks = socialMediaLinks;
     }
 
     @JsonProperty("phone_number")
-    public Object getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -180,5 +181,79 @@ public class FBPerson {
     @JsonAnySetter
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
+    }
+
+    /**
+     * {"page_name":"Page Not Found","
+     * location":"None",
+     * "email":"None",
+     * "phone_number":"None",
+     * "social_media_links":"None",
+     * "page_website":"None",
+     * "page_category":"None",
+     * "page_likes":"None",
+     * "page_followers":"None"}
+     *
+     * @param person
+     * @return
+     */
+    public static boolean isBlank(FBPerson person) {
+        if(person == null) return true;
+        if (person.getPageName().equals("Page Not Found")
+                && person.getLocation().equals(NONE)
+                && person.getEmail().equals(NONE)
+                && person.getPhoneNumber().equals(NONE)
+                && person.getSocialMediaLinks().equals(NONE)
+                && person.getPageWebsite().equals(NONE)
+                && person.getPageCategory().equals(NONE)
+                && person.getPageLikes().equals(NONE)
+                && person.getPageFollowers().equals(NONE)) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isNotBlank(FBPerson person, int howManyFieldsAreNotBlank) {
+        int localNonEmpty = 0;
+        if(person == null) return true;
+
+
+        if(person.getPageName()!= null) {
+            localNonEmpty++;
+        }
+
+        if(person.getLocation() != null) {
+            localNonEmpty++;
+        }
+
+        if(person.getEmail() != null) {
+            localNonEmpty++;
+        }
+
+        if(person.getPhoneNumber() != null) {
+            localNonEmpty++;
+        }
+
+        if(person.getSocialMediaLinks() != null) {
+            localNonEmpty++;
+        }
+
+        if(person.getPageWebsite() != null) {
+            localNonEmpty++;
+        }
+
+        if(person.getPageCategory() != null) {
+            localNonEmpty++;
+        }
+
+        if(person.getPageLikes() != null) {
+            localNonEmpty++;
+        }
+
+        if(person.getPageFollowers() != null) {
+            localNonEmpty++;
+        }
+
+        return (localNonEmpty >= howManyFieldsAreNotBlank) ? true : false;
     }
 }

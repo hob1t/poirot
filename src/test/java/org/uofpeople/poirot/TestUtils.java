@@ -1,7 +1,7 @@
 package org.uofpeople.poirot;
 
 import org.apache.commons.lang3.RandomStringUtils;
-import org.uofpeople.poirot.dmos.PersonDMO;
+import org.uofpeople.poirot.dmos.LIPersonDMO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,10 +42,10 @@ public final class TestUtils {
     /**
      * Creates a PersonDTO
      *
-     * @return randomly created {@link PersonDMO}
+     * @return randomly created {@link LIPersonDMO}
      */
-    public static PersonDMO createPersonDMO() {
-        PersonDMO personDMO = new PersonDMO();
+    public static LIPersonDMO createPersonDMO() {
+        LIPersonDMO personDMO = new LIPersonDMO();
         personDMO.setFirstName(RandomStringUtils.randomAlphabetic(STR_LEN));
         personDMO.setLastName(RandomStringUtils.randomAlphabetic(STR_LEN));
         personDMO.setEmail(createEmail());

@@ -10,9 +10,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.uofpeople.poirot.commons.Utilities;
-import org.uofpeople.poirot.dmos.PersonDMO;
-import org.uofpeople.poirot.pojos.Graph;
-import org.uofpeople.poirot.pojos.LinkedInPerson;
+import org.uofpeople.poirot.dmos.LIPersonDMO;
+import org.uofpeople.poirot.pojos.linkedin.Graph;
+import org.uofpeople.poirot.pojos.linkedin.LinkedInPerson;
 
 import java.io.IOException;
 import java.util.List;
@@ -46,7 +46,7 @@ public class LinkedInOps implements Operations {
         try {
             Document doc = Jsoup.connect(url).get();
 
-            if(doc.getElementById("links").getElementsByClass("results_links") != null) {
+            if(doc.getElementById("links")!= null && doc.getElementById("links").getElementsByClass("results_links") != null) {
                 Elements results = doc.getElementById("links").getElementsByClass("results_links");
 
                 for(Element result: results.stream().limit(RESULT_LIMIT).toList()){
@@ -86,6 +86,8 @@ public class LinkedInOps implements Operations {
         } catch (IOException e) {
             logger.error("Error while searching for linked In {}", query, e);
         }
+
+        logger.warn("Cannot scrap any LI page for query {}", query);
     }
 
     /**
@@ -93,7 +95,7 @@ public class LinkedInOps implements Operations {
      *
      * @return
      */
-    public List<PersonDMO> getAllPersons() {
+    public List<LIPersonDMO> getAllPersons() {
         return lidaService.findAll();
     }
 }

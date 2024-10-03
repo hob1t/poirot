@@ -227,7 +227,7 @@ These additional references should also help you:
 }
 ```
 
-```
+```json
 {
    "page_name":"Paul Kirby: Member for Port Darwin",
    "page_category":"Politiker/in",
@@ -249,6 +249,49 @@ These additional references should also help you:
    "following":"1,065 followed"
 
 }
+```
+
+Facebook List of Persons
+
+```json
+[
+  {
+    "id": "970ba0e4-105a-416d-a998-df846e0b9858",
+    "firstName": "Anthony",
+    "lastName": "Zurcher",
+    "email": "haveyoursay@bbc.co.uk",
+    "phone": null,
+    "profession": "Media/news company",
+    "personalWebPageURL": "http://www.bbc.co.uk/news",
+    "followers": 48,
+    "following": 0,
+    "location": "BBC Broadcasting House, London, United Kingdom, W1A 1AA"
+  },
+  {
+    "id": "845d587c-8c5a-409b-9db1-ed1e9c51916b",
+    "firstName": "Anthony",
+    "lastName": "Zurcher",
+    "email": "newsroomznbc@gmail.com",
+    "phone": null,
+    "profession": "Interest",
+    "personalWebPageURL": "https://znbc.co.zm",
+    "followers": 982000,
+    "following": 0,
+    "location": "ZNBC, P.O Box 50015, Mass Media Complex, Alick Nkata Road, Lusaka., 10101"
+  },
+  {
+    "id": "48e7a87d-171b-47bf-853e-94ca5443483d",
+    "firstName": "Anthony",
+    "lastName": "Zurcher",
+    "email": "info@creators.com",
+    "phone": "+1 310-337-7003",
+    "profession": "Arts & entertainment",
+    "personalWebPageURL": "http://www.Creators.com",
+    "followers": 2000,
+    "following": 0,
+    "location": "+1 310-337-7003"
+  }
+]
 ```
 
 #### curl example

@@ -6,6 +6,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.uofpeople.poirot.TestUtils;
+import org.uofpeople.poirot.pojos.linkedin.PersonInfoRequest;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,5 +1,5 @@
 
-package org.uofpeople.poirot.pojos;
+package org.uofpeople.poirot.pojos.linkedin;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -13,17 +13,14 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "@type",
-    "startDate",
-    "endDate"
+    "contentUrl"
 })
-public class Member {
+public class Image {
 
     @JsonProperty("@type")
     private String type;
-    @JsonProperty("startDate")
-    private int startDate;
-    @JsonProperty("endDate")
-    private int endDate;
+    @JsonProperty("contentUrl")
+    private String contentUrl;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -37,24 +34,14 @@ public class Member {
         this.type = type;
     }
 
-    @JsonProperty("startDate")
-    public int getStartDate() {
-        return startDate;
+    @JsonProperty("contentUrl")
+    public String getContentUrl() {
+        return contentUrl;
     }
 
-    @JsonProperty("startDate")
-    public void setStartDate(int startDate) {
-        this.startDate = startDate;
-    }
-
-    @JsonProperty("endDate")
-    public int getEndDate() {
-        return endDate;
-    }
-
-    @JsonProperty("endDate")
-    public void setEndDate(int endDate) {
-        this.endDate = endDate;
+    @JsonProperty("contentUrl")
+    public void setContentUrl(String contentUrl) {
+        this.contentUrl = contentUrl;
     }
 
     @JsonAnyGetter

@@ -1,5 +1,5 @@
 
-package org.uofpeople.poirot.pojos;
+package org.uofpeople.poirot.pojos.linkedin;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -14,35 +14,36 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "@type",
-    "name"
+    "description"
 })
-public class ReviewedBy {
+
+public class Fellow {
 
     @JsonProperty("@type")
-    private String type;
-    @JsonProperty("name")
-    private String name;
+    private String _type;
+    @JsonProperty("description")
+    private String description;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     @JsonProperty("@type")
-    public String getType() {
-        return type;
+    public String get_type() {
+        return _type;
     }
 
     @JsonProperty("@type")
-    public void setType(String type) {
-        this.type = type;
+    public void set_type(String _type) {
+        this._type = _type;
     }
 
-    @JsonProperty("name")
-    public String getName() {
-        return name;
+    @JsonProperty("description")
+    public String getDescription() {
+        return description;
     }
 
-    @JsonProperty("name")
-    public void setName(String name) {
-        this.name = name;
+    @JsonProperty("description")
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @JsonAnyGetter
