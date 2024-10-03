@@ -4,7 +4,9 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.uofpeople.poirot.dmos.PersonDMO;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.IntStream;
 
 public final class TestUtils {
     private TestUtils() {}
@@ -52,5 +54,17 @@ public final class TestUtils {
         personDMO.setPhone(generatePhoneNumber());
         personDMO.setLocation(RandomStringUtils.randomAlphabetic(STR_LEN));
         return personDMO;
+    }
+
+    public static String createRandomString() {
+        return "http://" + RandomStringUtils.randomAlphabetic(STR_LEN) + ".html";
+    }
+
+    public static List<String> createLinkList() {
+        List<String> linkList = new ArrayList<>();
+        IntStream.range(0, STR_LEN).forEach(i -> {
+            linkList.add(createRandomString());
+        });
+        return linkList;
     }
 }

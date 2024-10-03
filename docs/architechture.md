@@ -24,14 +24,19 @@ to the person of interest.
 
 #### Software requirements
 
-Use cases:
+##### Use cases:
+
 As a user I would like to be able to gather person's information on LinkedIn
+
 As a user I would like to be able to gather person's information on Facebook
+
 As a user I would like to persist gathered information into database
+
 As a user I would like to use CRUD repository
+
 As a user I would like to get REST API for CRUD operations
 
-Introduction
+#### Introduction
 As part of fight with misinformation, disinformation and fake news detection is one of the required steps are to get knowledge
 about person of interest. Existing OSINT tools can bring problems related to security or lack of maintenance. The purpose of this
 project to create a suitable solution.
@@ -40,10 +45,12 @@ visualization layers.
 
 Functional Requirements
 
-External Interface Requirements
+#### External Interface Requirements
+
 User Interface is a Swagger pages which make call to the backend functionality.
 
-Non-functional Requirements
+#### Non-functional Requirements
+
 Security
 
 Capacity - ideally storage should be dynamically allocated, aws s3 is a good candidate. For the capstone purposes it 

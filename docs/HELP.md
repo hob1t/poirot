@@ -226,3 +226,60 @@ These additional references should also help you:
   ]
 }
 ```
+
+```
+{
+   "page_name":"Paul Kirby: Member for Port Darwin",
+   "page_category":"Politiker/in",
+   "email":"electorate.portdarwin@nt.gov.au",
+   "page_website":[
+      "http://www.territorylabor.com.au",
+      "https://parliament.nt.gov.au/members/by-name/paul-kirby"
+   ],
+   "social_media_links":[
+      "https://www.instagram.com/kirbyportdarwin",
+      "https://linkedin.com/in"
+   ],
+   "phone_number":"None",
+   "location":"http://www.territorylabor.com.au/",
+   "page_rate":"None",
+   "page_review_number":"None",
+   "page_likes":"None",
+   "page_followers":"3.861 Follower",
+   "following":"1,065 followed"
+
+}
+```
+
+#### curl example
+
+```bash
+ curl -X POST http://localhost:5001 -d "{\"link\":\"https://www.facebook.com/mr.pallab.ghosh/\"}"  -H "Content-Type: application/json"
+ ```
+
+#### How to run python
+
+Create venv - virtual environment
+
+```bash
+python3 -m venv fb_scapper_venv
+```
+
+Activate created venv
+
+```bash
+source fb_scapper_venv/bin/activate
+```
+
+Install all fb_scrapper dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+And finally, run a script
+
+```bash
+python3 -m fb_page_scrapper
+```
+
