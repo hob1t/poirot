@@ -8,9 +8,9 @@ import lombok.ToString;
 @Setter
 @ToString
 public class PersonInfoRequest {
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String phone;
-    private String location;
+  private String firstName;
+  private String lastName;
+  private String email;
+  private String phone;
+  private String location;
 }

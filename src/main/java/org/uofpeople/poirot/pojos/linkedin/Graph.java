@@ -1,240 +1,254 @@
-
 package org.uofpeople.poirot.pojos.linkedin;
 
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "@type",
-    "address",
-    "alumniOf",
-    "awards",
-    "image",
-    "jobTitle",
-    "name",
-    "sameAs",
-    "url",
-    "memberOf",
-    "worksFor",
-    "knowsLanguage",
-    "disambiguatingDescription",
-    "interactionStatistic",
-    "description",
-    "reviewedBy"
+  "@type",
+  "address",
+  "alumniOf",
+  "awards",
+  "image",
+  "jobTitle",
+  "name",
+  "sameAs",
+  "url",
+  "memberOf",
+  "worksFor",
+  "knowsLanguage",
+  "disambiguatingDescription",
+  "interactionStatistic",
+  "description",
+  "reviewedBy"
 })
 public class Graph {
 
-    @JsonProperty("@type")
-    private String type;
-    @JsonProperty("address")
-    private Address address;
-    @JsonProperty("alumniOf")
-    private List<AlumniOf> alumniOf;
-    @JsonProperty("awards")
-    private List<String> awards;
-    @JsonProperty("image")
-    private Image image;
-    @JsonProperty("jobTitle")
-    private List<String> jobTitle;
-    @JsonProperty("name")
-    private String name;
-    @JsonProperty("sameAs")
-    private String sameAs;
-    @JsonProperty("url")
-    private String url;
-    @JsonProperty("memberOf")
-    private List<Object> memberOf;
-    @JsonProperty("worksFor")
-    private List<WorksFor> worksFor;
-    @JsonProperty("knowsLanguage")
-    private List<Object> knowsLanguage;
-    @JsonProperty("disambiguatingDescription")
-    private String disambiguatingDescription;
-    @JsonProperty("interactionStatistic")
-    private InteractionStatistic interactionStatistic;
-    @JsonProperty("description")
-    private String description;
-    @JsonProperty("reviewedBy")
-    private ReviewedBy reviewedBy;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+  @JsonProperty("@type")
+  private String type;
 
-    @JsonProperty("@type")
-    public String getType() {
-        return type;
-    }
+  @JsonProperty("address")
+  private Address address;
 
-    @JsonProperty("@type")
-    public void setType(String type) {
-        this.type = type;
-    }
+  @JsonProperty("alumniOf")
+  private List<AlumniOf> alumniOf;
 
-    @JsonProperty("address")
-    public Address getAddress() {
-        return address;
-    }
+  @JsonProperty("awards")
+  private List<String> awards;
 
-    @JsonProperty("address")
-    public void setAddress(Address address) {
-        this.address = address;
-    }
+  @JsonProperty("image")
+  private Image image;
 
-    @JsonProperty("alumniOf")
-    public List<AlumniOf> getAlumniOf() {
-        return alumniOf;
-    }
+  @JsonProperty("jobTitle")
+  private List<String> jobTitle;
 
-    @JsonProperty("alumniOf")
-    public void setAlumniOf(List<AlumniOf> alumniOf) {
-        this.alumniOf = alumniOf;
-    }
+  @JsonProperty("name")
+  private String name;
 
-    @JsonProperty("awards")
-    public List<String> getAwards() {
-        return awards;
-    }
+  @JsonProperty("sameAs")
+  private String sameAs;
 
-    @JsonProperty("awards")
-    public void setAwards(List<String> awards) {
-        this.awards = awards;
-    }
+  @JsonProperty("url")
+  private String url;
 
-    @JsonProperty("image")
-    public Image getImage() {
-        return image;
-    }
+  @JsonProperty("memberOf")
+  private List<Object> memberOf;
 
-    @JsonProperty("image")
-    public void setImage(Image image) {
-        this.image = image;
-    }
+  @JsonProperty("worksFor")
+  private List<WorksFor> worksFor;
 
-    @JsonProperty("jobTitle")
-    public List<String> getJobTitle() {
-        return jobTitle;
-    }
+  @JsonProperty("knowsLanguage")
+  private List<Object> knowsLanguage;
 
-    @JsonProperty("jobTitle")
-    public void setJobTitle(List<String> jobTitle) {
-        this.jobTitle = jobTitle;
-    }
+  @JsonProperty("disambiguatingDescription")
+  private String disambiguatingDescription;
 
-    @JsonProperty("name")
-    public String getName() {
-        return name;
-    }
+  @JsonProperty("interactionStatistic")
+  private InteractionStatistic interactionStatistic;
 
-    @JsonProperty("name")
-    public void setName(String name) {
-        this.name = name;
-    }
+  @JsonProperty("description")
+  private String description;
 
-    @JsonProperty("sameAs")
-    public String getSameAs() {
-        return sameAs;
-    }
+  @JsonProperty("reviewedBy")
+  private ReviewedBy reviewedBy;
 
-    @JsonProperty("sameAs")
-    public void setSameAs(String sameAs) {
-        this.sameAs = sameAs;
-    }
+  @JsonIgnore
+  private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
-    @JsonProperty("url")
-    public String getUrl() {
-        return url;
-    }
+  @JsonProperty("@type")
+  public String getType() {
+    return type;
+  }
 
-    @JsonProperty("url")
-    public void setUrl(String url) {
-        this.url = url;
-    }
+  @JsonProperty("@type")
+  public void setType(String type) {
+    this.type = type;
+  }
 
-    @JsonProperty("memberOf")
-    public List<Object> getMemberOf() {
-        return memberOf;
-    }
+  @JsonProperty("address")
+  public Address getAddress() {
+    return address;
+  }
 
-    @JsonProperty("memberOf")
-    public void setMemberOf(List<Object> memberOf) {
-        this.memberOf = memberOf;
-    }
+  @JsonProperty("address")
+  public void setAddress(Address address) {
+    this.address = address;
+  }
 
-    @JsonProperty("worksFor")
-    public List<WorksFor> getWorksFor() {
-        return worksFor;
-    }
+  @JsonProperty("alumniOf")
+  public List<AlumniOf> getAlumniOf() {
+    return alumniOf;
+  }
 
-    @JsonProperty("worksFor")
-    public void setWorksFor(List<WorksFor> worksFor) {
-        this.worksFor = worksFor;
-    }
+  @JsonProperty("alumniOf")
+  public void setAlumniOf(List<AlumniOf> alumniOf) {
+    this.alumniOf = alumniOf;
+  }
 
-    @JsonProperty("knowsLanguage")
-    public List<Object> getKnowsLanguage() {
-        return knowsLanguage;
-    }
+  @JsonProperty("awards")
+  public List<String> getAwards() {
+    return awards;
+  }
 
-    @JsonProperty("knowsLanguage")
-    public void setKnowsLanguage(List<Object> knowsLanguage) {
-        this.knowsLanguage = knowsLanguage;
-    }
+  @JsonProperty("awards")
+  public void setAwards(List<String> awards) {
+    this.awards = awards;
+  }
 
-    @JsonProperty("disambiguatingDescription")
-    public String getDisambiguatingDescription() {
-        return disambiguatingDescription;
-    }
+  @JsonProperty("image")
+  public Image getImage() {
+    return image;
+  }
 
-    @JsonProperty("disambiguatingDescription")
-    public void setDisambiguatingDescription(String disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
-    }
+  @JsonProperty("image")
+  public void setImage(Image image) {
+    this.image = image;
+  }
 
-    @JsonProperty("interactionStatistic")
-    public InteractionStatistic getInteractionStatistic() {
-        return interactionStatistic;
-    }
+  @JsonProperty("jobTitle")
+  public List<String> getJobTitle() {
+    return jobTitle;
+  }
 
-    @JsonProperty("interactionStatistic")
-    public void setInteractionStatistic(InteractionStatistic interactionStatistic) {
-        this.interactionStatistic = interactionStatistic;
-    }
+  @JsonProperty("jobTitle")
+  public void setJobTitle(List<String> jobTitle) {
+    this.jobTitle = jobTitle;
+  }
 
-    @JsonProperty("description")
-    public String getDescription() {
-        return description;
-    }
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
 
-    @JsonProperty("description")
-    public void setDescription(String description) {
-        this.description = description;
-    }
+  @JsonProperty("name")
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    @JsonProperty("reviewedBy")
-    public ReviewedBy getReviewedBy() {
-        return reviewedBy;
-    }
+  @JsonProperty("sameAs")
+  public String getSameAs() {
+    return sameAs;
+  }
 
-    @JsonProperty("reviewedBy")
-    public void setReviewedBy(ReviewedBy reviewedBy) {
-        this.reviewedBy = reviewedBy;
-    }
+  @JsonProperty("sameAs")
+  public void setSameAs(String sameAs) {
+    this.sameAs = sameAs;
+  }
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
+  @JsonProperty("url")
+  public String getUrl() {
+    return url;
+  }
 
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
+  @JsonProperty("url")
+  public void setUrl(String url) {
+    this.url = url;
+  }
 
+  @JsonProperty("memberOf")
+  public List<Object> getMemberOf() {
+    return memberOf;
+  }
+
+  @JsonProperty("memberOf")
+  public void setMemberOf(List<Object> memberOf) {
+    this.memberOf = memberOf;
+  }
+
+  @JsonProperty("worksFor")
+  public List<WorksFor> getWorksFor() {
+    return worksFor;
+  }
+
+  @JsonProperty("worksFor")
+  public void setWorksFor(List<WorksFor> worksFor) {
+    this.worksFor = worksFor;
+  }
+
+  @JsonProperty("knowsLanguage")
+  public List<Object> getKnowsLanguage() {
+    return knowsLanguage;
+  }
+
+  @JsonProperty("knowsLanguage")
+  public void setKnowsLanguage(List<Object> knowsLanguage) {
+    this.knowsLanguage = knowsLanguage;
+  }
+
+  @JsonProperty("disambiguatingDescription")
+  public String getDisambiguatingDescription() {
+    return disambiguatingDescription;
+  }
+
+  @JsonProperty("disambiguatingDescription")
+  public void setDisambiguatingDescription(String disambiguatingDescription) {
+    this.disambiguatingDescription = disambiguatingDescription;
+  }
+
+  @JsonProperty("interactionStatistic")
+  public InteractionStatistic getInteractionStatistic() {
+    return interactionStatistic;
+  }
+
+  @JsonProperty("interactionStatistic")
+  public void setInteractionStatistic(InteractionStatistic interactionStatistic) {
+    this.interactionStatistic = interactionStatistic;
+  }
+
+  @JsonProperty("description")
+  public String getDescription() {
+    return description;
+  }
+
+  @JsonProperty("description")
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  @JsonProperty("reviewedBy")
+  public ReviewedBy getReviewedBy() {
+    return reviewedBy;
+  }
+
+  @JsonProperty("reviewedBy")
+  public void setReviewedBy(ReviewedBy reviewedBy) {
+    this.reviewedBy = reviewedBy;
+  }
+
+  @JsonAnyGetter
+  public Map<String, Object> getAdditionalProperties() {
+    return this.additionalProperties;
+  }
+
+  @JsonAnySetter
+  public void setAdditionalProperty(String name, Object value) {
+    this.additionalProperties.put(name, value);
+  }
 }

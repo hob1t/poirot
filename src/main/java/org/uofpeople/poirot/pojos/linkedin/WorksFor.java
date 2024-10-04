@@ -1,8 +1,4 @@
-
 package org.uofpeople.poirot.pojos.linkedin;
-
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -10,89 +6,88 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "@type",
-    "name",
-    "url",
-    "location",
-    "member"
-})
-
+@JsonPropertyOrder({"@type", "name", "url", "location", "member"})
 public class WorksFor {
 
-    @JsonProperty("@type")
-    private String type;
-    @JsonProperty("name")
-    private String name;
-    @JsonProperty("url")
-    private String url;
-    @JsonProperty("location")
-    private String location;
-    @JsonProperty("member")
-    private Fellow member;
-    @JsonIgnore
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+  @JsonProperty("@type")
+  private String type;
 
-    @JsonProperty("@type")
-    public String getType() {
-        return type;
-    }
+  @JsonProperty("name")
+  private String name;
 
-    @JsonProperty("@type")
-    public void setType(String type) {
-        this.type = type;
-    }
+  @JsonProperty("url")
+  private String url;
 
-    @JsonProperty("name")
-    public String getName() {
-        return name;
-    }
+  @JsonProperty("location")
+  private String location;
 
-    @JsonProperty("name")
-    public void setName(String name) {
-        this.name = name;
-    }
+  @JsonProperty("member")
+  private Fellow member;
 
-    @JsonProperty("url")
-    public String getUrl() {
-        return url;
-    }
+  @JsonIgnore
+  private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
-    @JsonProperty("url")
-    public void setUrl(String url) {
-        this.url = url;
-    }
+  @JsonProperty("@type")
+  public String getType() {
+    return type;
+  }
 
-    @JsonProperty("location")
-    public String getLocation() {
-        return location;
-    }
+  @JsonProperty("@type")
+  public void setType(String type) {
+    this.type = type;
+  }
 
-    @JsonProperty("location")
-    public void setLocation(String location) {
-        this.location = location;
-    }
+  @JsonProperty("name")
+  public String getName() {
+    return name;
+  }
 
-    @JsonProperty("member")
-    public Fellow getMember() {
-        return member;
-    }
+  @JsonProperty("name")
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    @JsonProperty("member")
-    public void setMember(Fellow member) {
-        this.member = member;
-    }
+  @JsonProperty("url")
+  public String getUrl() {
+    return url;
+  }
 
-    @JsonAnyGetter
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
+  @JsonProperty("url")
+  public void setUrl(String url) {
+    this.url = url;
+  }
 
-    @JsonAnySetter
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
+  @JsonProperty("location")
+  public String getLocation() {
+    return location;
+  }
 
+  @JsonProperty("location")
+  public void setLocation(String location) {
+    this.location = location;
+  }
+
+  @JsonProperty("member")
+  public Fellow getMember() {
+    return member;
+  }
+
+  @JsonProperty("member")
+  public void setMember(Fellow member) {
+    this.member = member;
+  }
+
+  @JsonAnyGetter
+  public Map<String, Object> getAdditionalProperties() {
+    return this.additionalProperties;
+  }
+
+  @JsonAnySetter
+  public void setAdditionalProperty(String name, Object value) {
+    this.additionalProperties.put(name, value);
+  }
 }
