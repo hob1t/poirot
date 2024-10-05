@@ -25,70 +25,70 @@ import org.uofpeople.poirot.pojos.facebook.FBPerson;
 /** Represents FB operations */
 @Service
 public class FBOps implements Operations {
-  private final Logger logger = LoggerFactory.getLogger(FBOps.class);
-  private final RestTemplate restTemplate;
-  private final ObjectMapper objectMapper = new ObjectMapper();
-  private FIDAService fidaService;
+	private final Logger logger = LoggerFactory.getLogger(FBOps.class);
+	private final RestTemplate restTemplate;
+	private final ObjectMapper objectMapper = new ObjectMapper();
+	private FIDAService fidaService;
 
-  @Value("${fb.scrapper.url}")
-  private String fbScrapperUrl;
+	@Value("${fb.scrapper.url}")
+	private String fbScrapperUrl;
 
-  public FBOps(FIDAService fidaService) {
-    this.fidaService = fidaService;
-    this.restTemplate = new RestTemplate();
-  }
+	public FBOps(FIDAService fidaService) {
+		this.fidaService = fidaService;
+		this.restTemplate = new RestTemplate();
+	}
 
-  @Override
-  public void runSearch(String query) {
-    logger.info("Running search query: " + query);
+	@Override
+	public void runSearch(String query) {
+		logger.info("Running search query: " + query);
 
-    String url = String.format("https://duckduckgo.com/html/?q=site:facebook.com \"%s\"", query);
+		String url = String.format("https://duckduckgo.com/html/?q=site:facebook.com \"%s\"", query);
 
-    try {
-      HttpHeaders headers = new HttpHeaders();
-      headers.setContentType(MediaType.APPLICATION_JSON);
+		try {
+			HttpHeaders headers = new HttpHeaders();
+			headers.setContentType(MediaType.APPLICATION_JSON);
 
-      Document doc = Jsoup.connect(url).get();
-      if (doc.getElementById("links").getElementsByClass("results_links") != null) {
-        Elements results = doc.getElementById("links").getElementsByClass("results_links");
+			Document doc = Jsoup.connect(url).get();
+			if (doc.getElementById("links").getElementsByClass("results_links") != null) {
+				Elements results = doc.getElementById("links").getElementsByClass("results_links");
 
-        for (Element result : results.stream().limit(RESULT_LIMIT).toList()) {
-          Element page =
-              result.getElementsByClass("links_main").first().getElementsByTag("a").first();
+				for (Element result : results.stream().limit(RESULT_LIMIT).toList()) {
+					Element page = result.getElementsByClass("links_main").first().getElementsByTag("a").first();
 
-          String fbUrl = page.attr("href");
-          logger.info("FB URL: " + fbUrl);
+					String fbUrl = page.attr("href");
+					logger.info("FB URL: " + fbUrl);
 
-          try {
-            // send http request to python flask process
-            // creates payload
-            // "{\"link\":\"https://www.facebook.com/mr.pallab.ghosh/\"}"
-            String payload = String.format("{\"link\":\"%s\"}", checkAndFixUrl(fbUrl));
+					try {
+						// send http request to python flask process
+						// creates payload
+						// "{\"link\":\"https://www.facebook.com/mr.pallab.ghosh/\"}"
+						if (fbUrl != null && !fbUrl.isEmpty()) {
+							String payload = String.format("{\"link\":\"%s\"}", checkAndFixUrl(fbUrl));
 
-            // creates a request
-            HttpEntity<String> request = new HttpEntity<>(payload, headers);
-            // sends a request
-            ResponseEntity<String> response =
-                restTemplate.postForEntity(fbScrapperUrl, request, String.class);
-            FBPerson fbPerson = objectMapper.readValue(response.getBody(), FBPerson.class);
+							// creates a request
+							HttpEntity<String> request = new HttpEntity<>(payload, headers);
+							// sends a request
+							ResponseEntity<String> response = restTemplate.postForEntity(fbScrapperUrl, request,
+									String.class);
+							FBPerson fbPerson = objectMapper.readValue(response.getBody(), FBPerson.class);
 
-            logger.info("scrapper result: " + response.getBody());
-            // create first, last name from the query
-            if (FBPerson.isNotBlank(fbPerson, 5)) {
-              fidaService.create(Utilities.fromFrom(fbPerson, query));
-            }
+							logger.info("scrapper result: " + response.getBody());
+							// create first, last name from the query
+							if (FBPerson.isNotBlank(fbPerson, 5)) {
+								fidaService.create(Utilities.buildFrom(fbPerson, query));
+							}
+						}
+					} catch (Throwable e) {
+						logger.error(e.getMessage());
+					}
+				}
+			}
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+	}
 
-          } catch (Throwable e) {
-            logger.error(e.getMessage());
-          }
-        }
-      }
-    } catch (Exception e) {
-      logger.error(e.getMessage());
-    }
-  }
-
-  public List<FBPersonDMO> getAllPersons() {
-    return fidaService.findAll();
-  }
+	public List<FBPersonDMO> getAllPersons() {
+		return fidaService.findAll();
+	}
 }

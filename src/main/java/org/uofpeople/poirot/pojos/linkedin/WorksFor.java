@@ -13,81 +13,81 @@ import java.util.Map;
 @JsonPropertyOrder({"@type", "name", "url", "location", "member"})
 public class WorksFor {
 
-  @JsonProperty("@type")
-  private String type;
+	@JsonProperty("@type")
+	private String type;
 
-  @JsonProperty("name")
-  private String name;
+	@JsonProperty("name")
+	private String name;
 
-  @JsonProperty("url")
-  private String url;
+	@JsonProperty("url")
+	private String url;
 
-  @JsonProperty("location")
-  private String location;
+	@JsonProperty("location")
+	private String location;
 
-  @JsonProperty("member")
-  private Fellow member;
+	@JsonProperty("member")
+	private Fellow member;
 
-  @JsonIgnore
-  private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+	@JsonIgnore
+	private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
-  @JsonProperty("@type")
-  public String getType() {
-    return type;
-  }
+	@JsonProperty("@type")
+	public String getType() {
+		return type;
+	}
 
-  @JsonProperty("@type")
-  public void setType(String type) {
-    this.type = type;
-  }
+	@JsonProperty("@type")
+	public void setType(String type) {
+		this.type = type;
+	}
 
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
+	@JsonProperty("name")
+	public String getName() {
+		return name;
+	}
 
-  @JsonProperty("name")
-  public void setName(String name) {
-    this.name = name;
-  }
+	@JsonProperty("name")
+	public void setName(String name) {
+		this.name = name;
+	}
 
-  @JsonProperty("url")
-  public String getUrl() {
-    return url;
-  }
+	@JsonProperty("url")
+	public String getUrl() {
+		return url;
+	}
 
-  @JsonProperty("url")
-  public void setUrl(String url) {
-    this.url = url;
-  }
+	@JsonProperty("url")
+	public void setUrl(String url) {
+		this.url = url;
+	}
 
-  @JsonProperty("location")
-  public String getLocation() {
-    return location;
-  }
+	@JsonProperty("location")
+	public String getLocation() {
+		return location;
+	}
 
-  @JsonProperty("location")
-  public void setLocation(String location) {
-    this.location = location;
-  }
+	@JsonProperty("location")
+	public void setLocation(String location) {
+		this.location = location;
+	}
 
-  @JsonProperty("member")
-  public Fellow getMember() {
-    return member;
-  }
+	@JsonProperty("member")
+	public Fellow getMember() {
+		return member;
+	}
 
-  @JsonProperty("member")
-  public void setMember(Fellow member) {
-    this.member = member;
-  }
+	@JsonProperty("member")
+	public void setMember(Fellow member) {
+		this.member = member;
+	}
 
-  @JsonAnyGetter
-  public Map<String, Object> getAdditionalProperties() {
-    return this.additionalProperties;
-  }
+	@JsonAnyGetter
+	public Map<String, Object> getAdditionalProperties() {
+		return this.additionalProperties;
+	}
 
-  @JsonAnySetter
-  public void setAdditionalProperty(String name, Object value) {
-    this.additionalProperties.put(name, value);
-  }
+	@JsonAnySetter
+	public void setAdditionalProperty(String name, Object value) {
+		this.additionalProperties.put(name, value);
+	}
 }

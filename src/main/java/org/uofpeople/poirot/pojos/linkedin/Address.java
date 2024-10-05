@@ -13,55 +13,55 @@ import java.util.Map;
 @JsonPropertyOrder({"@type", "addressLocality", "addressCountry"})
 public class Address {
 
-  @JsonProperty("@type")
-  private String type;
+	@JsonProperty("@type")
+	private String type;
 
-  @JsonProperty("addressLocality")
-  private String addressLocality;
+	@JsonProperty("addressLocality")
+	private String addressLocality;
 
-  @JsonProperty("addressCountry")
-  private String addressCountry;
+	@JsonProperty("addressCountry")
+	private String addressCountry;
 
-  @JsonIgnore
-  private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+	@JsonIgnore
+	private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
-  @JsonProperty("@type")
-  public String getType() {
-    return type;
-  }
+	@JsonProperty("@type")
+	public String getType() {
+		return type;
+	}
 
-  @JsonProperty("@type")
-  public void setType(String type) {
-    this.type = type;
-  }
+	@JsonProperty("@type")
+	public void setType(String type) {
+		this.type = type;
+	}
 
-  @JsonProperty("addressLocality")
-  public String getAddressLocality() {
-    return addressLocality;
-  }
+	@JsonProperty("addressLocality")
+	public String getAddressLocality() {
+		return addressLocality;
+	}
 
-  @JsonProperty("addressLocality")
-  public void setAddressLocality(String addressLocality) {
-    this.addressLocality = addressLocality;
-  }
+	@JsonProperty("addressLocality")
+	public void setAddressLocality(String addressLocality) {
+		this.addressLocality = addressLocality;
+	}
 
-  @JsonProperty("addressCountry")
-  public String getAddressCountry() {
-    return addressCountry;
-  }
+	@JsonProperty("addressCountry")
+	public String getAddressCountry() {
+		return addressCountry;
+	}
 
-  @JsonProperty("addressCountry")
-  public void setAddressCountry(String addressCountry) {
-    this.addressCountry = addressCountry;
-  }
+	@JsonProperty("addressCountry")
+	public void setAddressCountry(String addressCountry) {
+		this.addressCountry = addressCountry;
+	}
 
-  @JsonAnyGetter
-  public Map<String, Object> getAdditionalProperties() {
-    return this.additionalProperties;
-  }
+	@JsonAnyGetter
+	public Map<String, Object> getAdditionalProperties() {
+		return this.additionalProperties;
+	}
 
-  @JsonAnySetter
-  public void setAdditionalProperty(String name, Object value) {
-    this.additionalProperties.put(name, value);
-  }
+	@JsonAnySetter
+	public void setAdditionalProperty(String name, Object value) {
+		this.additionalProperties.put(name, value);
+	}
 }

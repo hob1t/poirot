@@ -9,47 +9,48 @@ import org.uofpeople.poirot.repositories.LIRepository;
 /** Data Access Service for the LI repo */
 @Service
 public class LIDAService {
-  private LIRepository liRepository;
+	private LIRepository liRepository;
 
-  public LIDAService(LIRepository liRepository) {
-    this.liRepository = liRepository;
-  }
+	public LIDAService(LIRepository liRepository) {
+		this.liRepository = liRepository;
+	}
 
-  /**
-   * Saves DMO into collection
-   *
-   * @param personDMO
-   * @return
-   */
-  public LIPersonDMO create(LIPersonDMO personDMO) {
-    if (personDMO.getId() == null || personDMO.getId().isEmpty()) {
-      personDMO.setId(UUID.randomUUID().toString());
-    }
+	/**
+	 * Saves DMO into collection
+	 *
+	 * @param personDMO
+	 * @return
+	 */
+	public LIPersonDMO create(LIPersonDMO personDMO) {
+		if (personDMO.getId() == null || personDMO.getId().isEmpty()) {
+			personDMO.setId(UUID.randomUUID().toString());
+		}
 
-    return liRepository.save(personDMO);
-  }
+		return liRepository.save(personDMO);
+	}
 
-  /**
-   * Looks up for {@link LIPersonDMO} by ID
-   *
-   * @param id - a search key.
-   * @return {@link LIPersonDMO} or null
-   */
-  public LIPersonDMO findById(String id) {
-    return liRepository.findById(id).orElse(null);
-  }
+	/**
+	 * Looks up for {@link LIPersonDMO} by ID
+	 *
+	 * @param id
+	 *            - a search key.
+	 * @return {@link LIPersonDMO} or null
+	 */
+	public LIPersonDMO findById(String id) {
+		return liRepository.findById(id).orElse(null);
+	}
 
-  /**
-   * Gets all saved persons
-   *
-   * @return
-   */
-  public List<LIPersonDMO> findAll() {
-    return liRepository.findAll();
-  }
+	/**
+	 * Gets all saved persons
+	 *
+	 * @return
+	 */
+	public List<LIPersonDMO> findAll() {
+		return liRepository.findAll();
+	}
 
-  /** Deletes all documents from the repository. */
-  public void deleteAll() {
-    liRepository.deleteAll();
-  }
+	/** Deletes all documents from the repository. */
+	public void deleteAll() {
+		liRepository.deleteAll();
+	}
 }

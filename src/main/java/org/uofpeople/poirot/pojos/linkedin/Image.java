@@ -13,42 +13,42 @@ import java.util.Map;
 @JsonPropertyOrder({"@type", "contentUrl"})
 public class Image {
 
-  @JsonProperty("@type")
-  private String type;
+	@JsonProperty("@type")
+	private String type;
 
-  @JsonProperty("contentUrl")
-  private String contentUrl;
+	@JsonProperty("contentUrl")
+	private String contentUrl;
 
-  @JsonIgnore
-  private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+	@JsonIgnore
+	private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
-  @JsonProperty("@type")
-  public String getType() {
-    return type;
-  }
+	@JsonProperty("@type")
+	public String getType() {
+		return type;
+	}
 
-  @JsonProperty("@type")
-  public void setType(String type) {
-    this.type = type;
-  }
+	@JsonProperty("@type")
+	public void setType(String type) {
+		this.type = type;
+	}
 
-  @JsonProperty("contentUrl")
-  public String getContentUrl() {
-    return contentUrl;
-  }
+	@JsonProperty("contentUrl")
+	public String getContentUrl() {
+		return contentUrl;
+	}
 
-  @JsonProperty("contentUrl")
-  public void setContentUrl(String contentUrl) {
-    this.contentUrl = contentUrl;
-  }
+	@JsonProperty("contentUrl")
+	public void setContentUrl(String contentUrl) {
+		this.contentUrl = contentUrl;
+	}
 
-  @JsonAnyGetter
-  public Map<String, Object> getAdditionalProperties() {
-    return this.additionalProperties;
-  }
+	@JsonAnyGetter
+	public Map<String, Object> getAdditionalProperties() {
+		return this.additionalProperties;
+	}
 
-  @JsonAnySetter
-  public void setAdditionalProperty(String name, Object value) {
-    this.additionalProperties.put(name, value);
-  }
+	@JsonAnySetter
+	public void setAdditionalProperty(String name, Object value) {
+		this.additionalProperties.put(name, value);
+	}
 }

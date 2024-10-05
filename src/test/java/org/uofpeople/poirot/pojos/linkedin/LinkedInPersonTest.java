@@ -10,31 +10,30 @@ import org.junit.jupiter.api.Test;
 
 /** Tests {@link LinkedInPerson} functionality */
 class LinkedInPersonTest {
-  private LinkedInPerson person;
+	private LinkedInPerson person;
 
-  @BeforeEach
-  void setUp() {
-    person = new LinkedInPerson();
-  }
+	@BeforeEach
+	void setUp() {
+		person = new LinkedInPerson();
+	}
 
-  @Test
-  void getContext() {
-    String context = RandomStringUtils.randomAlphanumeric(STR_LEN);
-    person.setContext(context);
-    assertEquals(context, person.getContext());
-  }
+	@Test
+	void getContext() {
+		String context = RandomStringUtils.randomAlphanumeric(STR_LEN);
+		person.setContext(context);
+		assertEquals(context, person.getContext());
+	}
 
-  @Test
-  void getGraph() {
-    person.setGraph(createGraphList());
-    assertNotNull(person.getGraph());
-  }
+	@Test
+	void getGraph() {
+		person.setGraph(createGraphList());
+		assertNotNull(person.getGraph());
+	}
 
-  @Test
-  void getAdditionalProperties() {
-    person.setAdditionalProperty(
-        RandomStringUtils.randomAlphanumeric(STR_LEN),
-        RandomStringUtils.randomAlphanumeric(STR_LEN));
-    assertNotNull(person.getAdditionalProperties());
-  }
+	@Test
+	void getAdditionalProperties() {
+		person.setAdditionalProperty(RandomStringUtils.randomAlphanumeric(STR_LEN),
+				RandomStringUtils.randomAlphanumeric(STR_LEN));
+		assertNotNull(person.getAdditionalProperties());
+	}
 }

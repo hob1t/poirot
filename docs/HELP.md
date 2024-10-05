@@ -26,7 +26,7 @@ Show available java versions
 
 #### Swagger
 
-[run me](http://localhost:8080/swagger-ui/index.html)
+[run me](http://localhost:9090/swagger-ui/index.html)
 
 
 ### Guides
