@@ -1,0 +1,11 @@
+site_name: Poirot
+nav:
+  - Home:                        index.md
+  - Problem Statement:           architechture.md
+  - Software Design:             SDD.md
+  - Testing & Security Plan:     TSD.md
+  - Software CI/CD:              SDSM.md
+  - Help:                        HELP.md
+
+theme: readthedocs
+
