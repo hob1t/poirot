@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Software Design - Poirot</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Software Design";
+        var mkdocs_page_input_path = "SDD.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Poirot
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../architechture/">Problem Statement</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Software Design</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#purpose-of-the-document">Purpose of the document</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#scope-of-the-project">Scope of the project</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#intended-audience">Intended audience</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#project-overview-and-goals">Project Overview and Goals</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#milestones">Milestones</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#system-functionality">System Functionality</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#architectural-design">Architectural Design</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#detailed-design">Detailed Design</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_1"></a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../TSD/">Testing & Security Plan</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../SDSM/">Software CI/CD</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../HELP/">Help</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Poirot</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Software Design</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="software-design-document">Software Design Document</h2>
+<h3 id="introduction">Introduction</h3>
+<h4 id="purpose-of-the-document">Purpose of the document</h4>
+<p>This document service as a blueprint of Poirot capstone project. It provides a solution for collecting person's information
+based on open source resources.</p>
+<h4 id="scope-of-the-project">Scope of the project</h4>
+<p>A project exposes REST APIs for getting input from the researcher, exposes REST API to get collected data, performs
+person of interest searches on LinkedIn and Facebook social networks without requiring to be logged in or having 
+application tokens. Searches done anonymously. </p>
+<h4 id="intended-audience">Intended audience</h4>
+<p>Any researcher who fights with misinformation and the spreading of fake news.</p>
+<h3 id="project-overview-and-goals">Project Overview and Goals</h3>
+<p>A projects helps to the researches to gather information about person of interest. It helps
+to fight with spread of fake news or disinformation.</p>
+<p>A project uses: Java 17, gradle as a build tool, dockerd, Spring Boot framework, MongoDB as document database.
+Project length is about two month. </p>
+<h4 id="milestones">Milestones</h4>
+<p>Week 1 - Definition of problem</p>
+<p>Week 2 - requirement gathering</p>
+<p>Week 3 - requirement and resource analysis</p>
+<p>Week 4 - Software Design Document</p>
+<p>Week 5 - Implementation</p>
+<p>Week 6 - Testing, Final Polishing, finalization of documentation</p>
+<h3 id="system-functionality">System Functionality</h3>
+<p>Rest Controller - exposes REST APIs</p>
+<ul>
+<li>GET  /linkedin/persons</li>
+<li>POST /linkedin/persons</li>
+<li>POST /facebook/persons</li>
+<li>GET  /facebook/persons</li>
+</ul>
+<p>Services</p>
+<ul>
+<li>LinkedIn service - provides functionality for making LinkedIn searches and gathering relevant information.</li>
+<li>Facebook service - provide functionality for making Facebook searches and gathering relevant information.</li>
+</ul>
+<p>Repositories</p>
+<ul>
+<li>LinkedIn repository services as an interface for making common operations related to mongoDB</li>
+<li>
+<p>Facebook repository services as an interface for making common operations related to mongoDB </p>
+</li>
+<li>
+<p>MongoDB - persists collected data, runs as a microservice, docker container.</p>
+</li>
+<li>
+<p>Facebook-Scrapper-Page - performs facebook scrapping pages. Runs as a docker container.</p>
+</li>
+</ul>
+<h3 id="architectural-design">Architectural Design</h3>
+<p>provides a blueprint of the system’s structure. </p>
+<p><img alt="alt hldd" src="../images/high-level-design.drawio.png" /></p>
+<p>Communication types:</p>
+<p>Client (a browser) communicates with a Service (Poirot) via HTTP synchronous protocol. A client sends request to 
+the server and waits for the response.</p>
+<p>We may to use asynchronous protocol, for example AMQP however it is a more complicated and due to the time constraints
+we are not going to use it.</p>
+<p>Our application separated on two different microservices: a main one - Poirot and second one - mongo db server.</p>
+<p>Microservices helps to divide monolith application into separated and manageable services. As benefits, it gives us:
+scalability, maintainability and flexibility. Each service becomes more small and easier to deploy, independently.
+For example, if we fixed a bug in Poirot, we do not need to redeploy mongo server. 
+It also reduces deployment time, make fault recovery more robust.
+Another benefit is a testing. Becasue to the nature of microservices the can in less effort test more efficiently.</p>
+<p>However, it is also adds overhead representing kind of disadvantages.
+For developer, it represents a difficulty to debug system. In case of many microservices it is challenging to get and synchronise
+logs from them. 
+Data also can be out of consistency, management and integrity. 
+To test single microservice is easy, however to test end two end becomes a challenge.</p>
+<h3 id="detailed-design">Detailed Design</h3>
+<p>Rest controllers</p>
+<ul>
+<li>PersonalInformationFetcher - exposes REST API to get input from the user.</li>
+</ul>
+<p>The payload is a json, <code>PersonInfoRequest</code></p>
+<pre><code>{
+   &quot;firstName&quot;:&quot;Jon&quot;,
+   &quot;lastName&quot;:&quot;Snow&quot;,
+   &quot;email&quot;:&quot;jon.snow@gameofthrones.com&quot;,
+   &quot;phone&quot;:&quot;(666) JON-RAVEN&quot;,
+   &quot;location&quot;:&quot;Westeros&quot;
+}
+</code></pre>
+<ul>
+<li>Services</li>
+</ul>
+<p>LinkedInOps - firstly, performs a search query on DDG (duckduckgo), "site:Linkedin.com 'Jon Snow'". It takes only 5 top
+results. This parameter is in Constants, representing a limit. Can be changed. Once a result is gotten, it starts a LI 
+personal information scraping. It uses available public LinkedIn profiles. If it is not available we get HTTP status - 999.
+It means that request is denied. The possible solution is to use "https://translate.yandex.com/translate", in current
+implementation it won't be implemented. When information is received LinkedInPerson.java it transformed to DMO (Data Model Object) and saved
+into database as a document.</p>
+<ul>
+<li>Database layer - repositories</li>
+</ul>
+<p>Spring Boot CRUD Repository abstracts database operations layer and makes its easier to make operations like: Update, Read,
+Create or Delete.</p>
+<ul>
+<li>To gather facebook user profiles we create a docker container with <a href="https://pypi.org/project/facebook-page-info-scraper/">python fb page scrapper</a>
+  As a mongodb runs as separate docker container, our python facebook scrapper will run also as separate docker container.
+  In order to run python scrapper we create Java process which will run 'docker exec 6ffda86269fa ulimit -a' and then grab the output
+  which is as a json file and handle it and save into facebook collection. However, only public profiles can be scrapped.</li>
+</ul>
+<p>Each module or component should have its own subsection, 
+explaining its purpose, functionalities, and internal workings. 
+Include class diagrams, sequence diagrams, and other relevant technical drawings.</p>
+<h3 id="_1"></h3>
+<p>References:</p>
+<p>Editorial Team. (n.d.). Software design document: What is it &amp; how to create it! (template included). BIT.AI Blog.
+https://blog.bit.ai/software-design-document/</p>
+<p>James Montemagno (April, 2022). Communication in a microservice architecture
+https://learn.microsoft.com/en-us/dotnet/architecture/microservices/architect-microservice-container-applications/communication-in-microservice-architecture</p>
+<p>Atlassian Blog - Advantages of microservices and disadvantages to know
+https://www.atlassian.com/microservices/cloud-computing/advantages-of-microservices</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../architechture/" class="btn btn-neutral float-left" title="Problem Statement"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../TSD/" class="btn btn-neutral float-right" title="Testing & Security Plan">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../architechture/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../TSD/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

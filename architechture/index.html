@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Problem Statement - Poirot</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Problem Statement";
+        var mkdocs_page_input_path = "architechture.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Poirot
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Problem Statement</a>
+    <ul class="current">
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../SDD/">Software Design</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../TSD/">Testing & Security Plan</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../SDSM/">Software CI/CD</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../HELP/">Help</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Poirot</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Problem Statement</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="project-name">Project Name</h2>
+<p>Poirot, like famous detective Hercule Poirot</p>
+<h2 id="high-level-design">High Level design</h2>
+<p><img alt="alt layers" src="../images/layered_arch.drawio.png" /></p>
+<h4 id="vpn">VPN</h4>
+<p>Gathering person's information not always legally allowed or person's accreditated task. It is quite important to hide
+searcher's information. VPN helps to give a solution for this requirement.</p>
+<p>Gewirtz (2024) explains: "The purpose of a VPN is to provide you with security and privacy as you communicate over the internet. 
+Most of the internet's core protocols (communication methods) were designed to route around failure, rather than secure data. 
+While some standards have developed, not all internet apps are secure. Many still send their information without any security 
+or privacy protection whatsoever. This leaves any internet user vulnerable to criminals who might steal your banking or 
+credit card information, governments who might want to eavesdrop on their citizens, and other internet users who might want 
+to spy on you for a whole range of nefarious reasons."</p>
+<p>If a researcher logged in into LI account and looks for user's profile, LI notifies a person what a "searcher" was looking his profile.
+Using VPN we will hide part of such information. In addition, using Google Dorks we gather information without showing up our identity
+to the person of interest.</p>
+<h4 id="software-requirements">Software requirements</h4>
+<h5 id="use-cases">Use cases:</h5>
+<p>As a user I would like to be able to gather person's information on LinkedIn</p>
+<p>As a user I would like to be able to gather person's information on Facebook</p>
+<p>As a user I would like to persist gathered information into database</p>
+<p>As a user I would like to use CRUD repository</p>
+<p>As a user I would like to get REST API for CRUD operations</p>
+<h4 id="introduction">Introduction</h4>
+<p>As part of fight with misinformation, disinformation and fake news detection is one of the required steps are to get knowledge
+about person of interest. Existing OSINT tools can bring problems related to security or lack of maintenance. The purpose of this
+project to create a suitable solution.
+Product scope is having MVC layer, Business layer &amp; Persistence layer. However, it will not have a data analytics and data
+visualization layers. </p>
+<p>Functional Requirements</p>
+<h4 id="external-interface-requirements">External Interface Requirements</h4>
+<p>User Interface is a Swagger pages which make call to the backend functionality.</p>
+<h4 id="non-functional-requirements">Non-functional Requirements</h4>
+<p>Security</p>
+<p>Capacity - ideally storage should be dynamically allocated, aws s3 is a good candidate. For the capstone purposes it 
+           is enough to have 250Gb.</p>
+<p>Compatibility - minimum requirements for hardware are: RAM 8GB, CPU Apple M1, 8 Cores.</p>
+<p>Reliability and availability - response for each request should be persisted. DB should have a backup last 24 hours.
+                               Each microservice should implement its healthcheck, for cluster management.</p>
+<p>Scalability - the minimum number of pods is one, maximum is 3. k8s configured for scale up or scale down.</p>
+<p>Maintainability - CI/CD triggered on each commit. In addition, on master merge triggers a redeploy logic.
+                  In addition, part of CI process added logic of checking dependencies updates and security code scanning.</p>
+<p>Usability - a service exposes Swagger, accepts curl commands as well.</p>
+<h4 id="project-resources-resources-identified">Project Resources Resources Identified</h4>
+<p>A computer a main source of machinery.
+Text editor or IDE to write code, edit documentation.
+Browser - a firefox or chrome. To surf internet.
+Internet connection - to do a research
+VPN - for secure connection outside the world. Any VPN is suitable, in my case i use Surfshark.
+A person with required skill set (me)
+Time - entire project takes 6 weeks, each week is intended to Specific Sprint. A lenght of each Spring is exactly
+one week long. </p>
+<h4 id="challenges-gathering-facebook-information">Challenges gathering facebook information</h4>
+<p>Facebook requires to be registered in order to get user's information. Registration allow to sources to know who is 
+gathering information. Our goal to expose as little as possible information for anybody.</p>
+<p>So, first we do a google dorks as <code>site:facebook.com "John Doe"</code>. It brings us a search page which we have to scrap.
+One of the scapping results is user's profile URL which contains information related to username. Username can be as same
+as a user's first and last names or different. In addition, we can also find userID info, which can be useful.</p>
+<p>Next challenge is to parse search results and get valuable information. Fortunately, there are a lot of available
+libraries which helps us to do it.</p>
+<p>During the number of ddg request I got: "Please complete the following challenge to confirm this search was made by a human"
+Basically it means I cannot automate web scrapping using current approach.</p>
+<h3 id="management-of-resources">Management of Resources</h3>
+<h4 id="time">Time</h4>
+<p>The longevity of the project is about 6 weeks. Each week 15 hours of work.</p>
+<h4 id="raw-materials-software-to-be-used">Raw materials /software to be used</h4>
+<p>IDE - Intellij, java 17, python 3, docker, macOS, firefox as a browser, VPN - surfshark</p>
+<p>Docker, MongoDB, Spring Boot framework, gradle, docker-compose</p>
+<p>Java is good language, I am familiar with it, 17 version is a minimum version that requires Spring Boot.</p>
+<p>Docker is a technology which makes possible to run application as a service. Using k8s makes to manage our cluster</p>
+<p>of microservices if we need to scale. In general using docker images gives us ability in matter of seconds to redeploy</p>
+<p>our application for more newest version.</p>
+<p>Gradle is a build tool. To build a project we have two options: maven or gradle. Gradle is more modern building tool.</p>
+<p>MongoDB is chosen because it is document database, allows us to save data simply as json file. To use relational database</p>
+<p>is not suitable for this kind of project due to the data model. In addition to scale not relational database is much easier</p>
+<p>that relational. </p>
+<h4 id="human-resources">Human resources</h4>
+<p>Me and Professor as mentor and adviser. I am going to implement this project.</p>
+<h4 id="machinery-and-equipment">Machinery and equipment</h4>
+<p>MacBook AIR it is what I have.</p>
+<h4 id="financial-resources">Financial Resources</h4>
+<p>A cost of the project is the much as 300 usd.</p>
+<h4 id="infomration-and-data">Infomration and data</h4>
+<p>Using duckduck search engine, Google Scholar and google dorks. Using google requires to be loged in, which not serves
+well for our porposes, duckduck is allows to make search queries anonymously. 
+Also any information used or looked at mentioned in References.</p>
+<p>Gathered information saved in MongoDB.</p>
+<h3 id="software-requirements-and-specification">Software Requirements and Specification</h3>
+<h4 id="software-requirements_1">Software Requirements</h4>
+<p>Should expose REST API in order to get input from the user like first name, last name, email, location
+Optional: email, location</p>
+<p>Should save gathered information about a person of interest.</p>
+<p>Should expose REST API for CRUD operations</p>
+<p>Should be implemented as microservice(s) and packeged as a Dockerfile.</p>
+<p>Code should be kept in github repository</p>
+<h4 id="software-design-document">Software Design Document</h4>
+<p>** Gathering Flow **</p>
+<p><img alt="alt gathering" src="../images/gathering_flow.drawio.png" /></p>
+<p><strong>Interface of REST CRUD operations</strong></p>
+<p><strong>C</strong>reate operation puts a new document/entry into database/collection. </p>
+<p><strong>R</strong>ead operation gets a document/entry from database/collection</p>
+<p><strong>U</strong>pdate operation changes property(-s) of the document/entry</p>
+<p><strong>D</strong>elete operation deletes a document/entry from the database/collection</p>
+<p><strong>Controllers</strong></p>
+<p>Person's information Gathering Controller</p>
+<p>CRUD Controller</p>
+<p><strong>Repositories</strong></p>
+<p>In the world of Spring Boot a repository is an interface which abstracts database operations.</p>
+<ul>
+<li>FaceBook Repository</li>
+</ul>
+<p><em>List of allowed operations</em></p>
+<p>Saves a given entity</p>
+<p>Gets the entity by ID</p>
+<p>Gets all entities by paging</p>
+<p>Deletes the given entity</p>
+<ul>
+<li>LinkedIn Repository</li>
+</ul>
+<p><strong>Data Access Objects</strong></p>
+<p>Person</p>
+<ul>
+<li>
+<p>Location</p>
+</li>
+<li>
+<p>Alumni</p>
+</li>
+<li>
+<p>Image URL - for reverse search</p>
+</li>
+<li>
+<p>First Name</p>
+</li>
+<li>
+<p>Last Name</p>
+</li>
+<li>
+<p>Phone</p>
+</li>
+<li>
+<p>Email</p>
+</li>
+<li>
+<p>Follows - a counter</p>
+</li>
+<li>
+<p>Connection #</p>
+</li>
+<li>
+<p>Works for</p>
+</li>
+<li>
+<p>LinkedIn URL</p>
+</li>
+</ul>
+<h5 id="if-we-get-status999">If we get status=999</h5>
+<pre><code>!archivemd ${https://www.linkedin.com/in/ashley-hume-5733b345}
+https://archive.md/https://www.linkedin.com/in/ashley-hume-5733b345
+https://archive.md/https://www.facebook.com/jonsnowandassociates/about
+</code></pre>
+<p>or</p>
+<pre><code>https://translate.yandex.com/translate
+</code></pre>
+<h4 id="references">References</h4>
+<p>David Gewirtz (May 28, 2024). What is a VPN and why do you need one?
+https://www.zdnet.com/article/what-is-a-vpn-and-why-do-you-need-one-all-your-virtual-private-network-questions-answered/</p>
+<p>Ishan Oshada GDorks github repository
+https://github.com/Ishanoshada/GDorks</p>
+<p>Spring Boot - data repository
+https://docs.spring.io/spring-data/data-commons/docs/1.6.1.RELEASE/reference/html/repositories.html</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../SDD/" class="btn btn-neutral float-right" title="Software Design">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../SDD/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
