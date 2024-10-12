@@ -10,19 +10,30 @@ For further reference, please consider the following sections:
 
 #### Useful commands
 
+##### Install MongoDB locally
+
 ```bash
- docker-compose up -d
+cd scripts
+docker-compose up -d
 ```
 
-Show available java versions
+##### Show available java versions
+
+Minimum java version is Java 17.
 
 ```bash
 /usr/libexec/java_home -V
 ```
 
-#### 
+#### Docker
 
 * Be sure that Docker Desktop is up and running together with docker
+
+Check if docker is up and running
+
+``` bash
+docker ps 
+```
 
 #### Swagger
 
@@ -35,10 +46,12 @@ The following guides illustrate how to use some features concretely:
 * [Accessing Data with MongoDB](https://spring.io/guides/gs/accessing-data-mongodb/)
 
 ### Additional Links
+
 These additional references should also help you:
 
 * [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
 
+##### LI structure we get during the scrapping
 
 ```json
 {
@@ -227,6 +240,8 @@ These additional references should also help you:
 }
 ```
 
+##### FB raw data we get during the scrapping
+
 ```json
 {
    "page_name":"Paul Kirby: Member for Port Darwin",
@@ -250,6 +265,8 @@ These additional references should also help you:
 
 }
 ```
+
+##### FB our data, saved in the mongoDB
 
 Facebook List of Persons
 
@@ -300,7 +317,7 @@ Facebook List of Persons
  curl -X POST http://localhost:5001 -d "{\"link\":\"https://www.facebook.com/mr.pallab.ghosh/\"}"  -H "Content-Type: application/json"
  ```
 
-#### How to run python
+#### How to run python, FB page scrapper
 
 Create venv - virtual environment
 
@@ -325,4 +342,3 @@ And finally, run a script
 ```bash
 python3 -m fb_page_scrapper
 ```
-

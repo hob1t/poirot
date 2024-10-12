@@ -1,7 +1,7 @@
 site_name: Poirot
 nav:
   - Home:                        index.md
-  - Problem Statement:           architechture.md
+  - Problem Statement:           problem_statement.md
   - Software Design:             SDD.md
   - Testing & Security Plan:     TSD.md
   - Software CI/CD:              SDSM.md

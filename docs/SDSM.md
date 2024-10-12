@@ -78,6 +78,16 @@ gradle javadoc
 
 ### Deployment Strategies and Maintenance Techniques
 
+Software deployment strategy types include:
+
+* Basic
+* Multi-service
+* Rolling Deployment
+* Blue Green Deployment
+* Canary Deployment
+* A/B Testing
+
+
 Why Docker?
 
 It helps us to run our application in isolated environment.
