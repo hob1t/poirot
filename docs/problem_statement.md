@@ -21,7 +21,7 @@ that the maintainer population is aging – not enough newcomers want the
 undercompensated, unappreciated job.”
 The second problem as Revel (2016) suggests is
 
-<img src="images/second_problem.png" width="600">
+![alt second_problem](images/second_problem.png)
 
 ### Proposed solution
 
