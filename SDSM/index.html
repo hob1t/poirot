@@ -63,6 +63,10 @@
     <li class="toctree-l2"><a class="reference internal" href="#tags-releases">Tags &amp; Releases</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#to-generate-it-simply-run">To generate it, simply run</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#deployment-strategies-and-maintenance-techniques">Deployment Strategies and Maintenance Techniques</a>
         <ul>
@@ -123,6 +127,10 @@ work and reduce risk of untested work. When all required testing is done, we mer
 <p>In <code>Poirot</code> project new release is done when milestone is achieved. </p>
 <p>When new release is set up, we created new docker image and redeploy the application.</p>
 <h4 id="documentation">Documentation</h4>
+<p>Oragui (2024) writes: "Software documentation is a crucial part of working software. Software documentation is 
+crucial because it can assist users understand how to use your software, it can provide developers and other 
+technical stakeholders with information about the technical aspects of your software, and it can help ensure 
+that the software development process is consistent and repeatable.".</p>
 <p>Documentation is in md files. We use <code>mkdocs</code> which generates project's documentation.</p>
 <ul>
 <li>Prerequisites </li>
@@ -143,6 +151,12 @@ work and reduce risk of untested work. When all required testing is done, we mer
 </ul>
 <pre><code>mkdocs gh-deploy
 </code></pre>
+<p><img alt="alt mkdocs" src="../images/mkdocs.png" /></p>
+<p>In <code>Poirot</code> project we also use <code>javadoc</code> a documentation of the source code.</p>
+<h5 id="to-generate-it-simply-run">To generate it, simply run</h5>
+<pre><code>gradle javadoc
+</code></pre>
+<p><img alt="alt javadoc" src="../images/java_doc.png" /></p>
 <h3 id="deployment-strategies-and-maintenance-techniques">Deployment Strategies and Maintenance Techniques</h3>
 <p>Why Docker?</p>
 <p>It helps us to run our application in isolated environment.</p>
@@ -169,8 +183,14 @@ https://devopsbootcamp.org/8-deployment-strategies-explained-and-compared/</p>
 https://www.baeldung.com/dockerizing-spring-boot-application</p>
 <p>Github Managing releases in a repository
 https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository</p>
-<p>Documentation
+<p>Documentation - Creating Project Documentation
 https://www.mkdocs.org/</p>
+<p>Poirot documentation site
+https://hob1t.github.io/poirot/</p>
+<p>David, O. (2023, April 26). Software documentation best practices <a href="https://helpjuice.com/blog/software-documentation">with examples</a>. Helpjuice.</p>
+<p>Martin, M. (2023, April 8). <a href="https://www.guru99.com/software-configuration-management-tutorial.html">Software configuration management in software engineering.</a> Guru99.</p>
+<p><a href="https://www.sumologic.com/glossary/software-deployment/">Software deployment- definitions and overview.</a> (n. d). Sumo Logic. </p>
+<p><a href="https://cpl.thalesgroup.com/software-monetization/four-types-of-software-maintenance">What is a software maintenance process? 4 types of software maintenance.</a> (n.d.). Thales. </p>
               
             </div>
           </div><footer>
