@@ -32,6 +32,12 @@ When new release is set up, we created new docker image and redeploy the applica
 
 #### Documentation
 
+Oragui (2024) writes: "Software documentation is a crucial part of working software. Software documentation is 
+crucial because it can assist users understand how to use your software, it can provide developers and other 
+technical stakeholders with information about the technical aspects of your software, and it can help ensure 
+that the software development process is consistent and repeatable.".
+
+
 Documentation is in md files. We use ```mkdocs``` which generates project's documentation.
 
 * Prerequisites 
@@ -56,6 +62,18 @@ python3 -m venv doc_venv && source doc_venv/bin/activate && pip install mkdocs
 mkdocs gh-deploy
 ```
 
+![alt mkdocs](images/mkdocs.png)
+
+
+In ```Poirot``` project we also use ```javadoc``` a documentation of the source code.
+
+##### To generate it, simply run
+
+```
+gradle javadoc
+```
+
+![alt javadoc](images/java_doc.png)
 
 
 ### Deployment Strategies and Maintenance Techniques
@@ -109,5 +127,17 @@ https://www.baeldung.com/dockerizing-spring-boot-application
 Github Managing releases in a repository
 https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository
 
-Documentation
+Documentation - Creating Project Documentation
 https://www.mkdocs.org/
+
+Poirot documentation site
+https://hob1t.github.io/poirot/
+
+David, O. (2023, April 26). Software documentation best practices [with examples](https://helpjuice.com/blog/software-documentation). Helpjuice.
+
+Martin, M. (2023, April 8). [Software configuration management in software engineering.](https://www.guru99.com/software-configuration-management-tutorial.html) Guru99.
+
+[Software deployment- definitions and overview.](https://www.sumologic.com/glossary/software-deployment/) (n. d). Sumo Logic. 
+
+[What is a software maintenance process? 4 types of software maintenance.](https://cpl.thalesgroup.com/software-monetization/four-types-of-software-maintenance) (n.d.). Thales. 
+
