@@ -7,6 +7,7 @@ import java.util.stream.IntStream;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.uofpeople.poirot.dmos.FBPersonDMO;
 import org.uofpeople.poirot.dmos.LIPersonDMO;
 import org.uofpeople.poirot.pojos.facebook.FBPerson;
 import org.uofpeople.poirot.pojos.linkedin.*;
@@ -273,5 +274,22 @@ public final class TestUtils {
 		} catch (JsonProcessingException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	/**
+	 * Creates {@link FBPersonDMO}
+	 *
+	 * @return randomly generated {@link FBPersonDMO}.
+	 */
+	public static FBPersonDMO createFBPersonDMO() {
+		FBPersonDMO fbPersonDMO = new FBPersonDMO();
+		fbPersonDMO.setFirstName(RandomStringUtils.randomAlphabetic(STR_LEN));
+		fbPersonDMO.setLastName(RandomStringUtils.randomAlphabetic(STR_LEN));
+		fbPersonDMO.setEmail(createEmail());
+		fbPersonDMO.setProfession(RandomStringUtils.randomAlphabetic(STR_LEN));
+		fbPersonDMO.setFollowers(STR_LEN);
+		fbPersonDMO.setPhone(generatePhoneNumber());
+		fbPersonDMO.setId(UUID.randomUUID().toString());
+		return fbPersonDMO;
 	}
 }

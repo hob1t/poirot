@@ -7,6 +7,13 @@
 This project is developed using TDD (test driven development) methodology. It means, you start developing with test, 
 then go to the code. At the end, your code is covered by unit tests.
 
+Test cases:
+
+* LinkedInOps
+
+![alt linkedInOps ut](images/linkedInOps_ss.png)
+
+
 #### End-2-End testing
 
 Next, is e2e testing. The idea is to run entire system from the start to the end, where a request will pass every flow.
