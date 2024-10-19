@@ -39,6 +39,6 @@ def index():
 
 
 if __name__ == "__main__":
-    # page_to_scrap = sys.argv[1]
+    server_port = sys.argv[1]
     # scrap_fb_page(page_to_scrap)
-    server.run(host='0.0.0.0', port=5001, debug=True)
+    server.run(host='0.0.0.0', port=server_port, debug=True)
