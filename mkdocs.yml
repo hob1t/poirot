@@ -6,7 +6,7 @@ nav:
   - Testing & Security Plan:     TSD.md
   - Software CI/CD:              SDSM.md
   - Help:                        HELP.md
-  - Capstone Repost:             capstone_report.md
+  - Capstone Report:             capstone_report.md
 
 theme: readthedocs
 

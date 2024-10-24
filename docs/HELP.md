@@ -340,5 +340,50 @@ pip install -r requirements.txt
 And finally, run a script
 
 ```bash
-python3 -m fb_page_scrapper
+python3 -m fb_page_scrapper <any_port_of_yours>
 ```
+
+#### How to deploy mkdocs, a documentaion
+
+```
+source doc_venv/bin/activate
+```
+
+Then run
+
+```
+ mkdocs gh-deploy
+```
+
+Wait for awhile, and go:
+
+```bash
+ https://hob1t.github.io/poirot/
+```
+
+#### How to prepare a presentation
+
+**Rule 1**: Include only one idea per slide
+
+**Rule 2:** Spend only 1 minute per slide
+
+**Rule 3:** Make use of your heading
+
+**Rule 4:** Include only essential points
+
+**Rule 5:** Give credit, where credit is due
+
+**Rule 6:** Use graphics effectively
+
+**Rule 7:** Design to avoid cognitive overload
+
+**Rule 8:** Design the slide so that a distracted person gets the main takeaway
+
+**Rule 9:** Iteratively improve slide design through practice
+
+**Rule 10:** Design to mitigate the impact of technical disasters
+
+
+References:
+
+[Ten simple rules for effective presentation slides](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009554)
