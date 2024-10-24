@@ -90,13 +90,17 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#curl-example">curl example</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-to-deploy-mkdocs-a-documentaion">How to deploy mkdocs, a documentaion</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-to-prepare-a-presentation">How to prepare a presentation</a>
+    </li>
         </ul>
     </li>
     </ul>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../capstone_report/">Capstone Repost</a>
+                <li class="toctree-l1"><a class="reference internal" href="../capstone_report/">Capstone Report</a>
                 </li>
               </ul>
       </div>
@@ -427,14 +431,36 @@ python3 -m venv fb_scapper_venv
 <pre><code class="language-bash">pip install -r requirements.txt
 </code></pre>
 <p>And finally, run a script</p>
-<pre><code class="language-bash">python3 -m fb_page_scrapper
+<pre><code class="language-bash">python3 -m fb_page_scrapper &lt;any_port_of_yours&gt;
 </code></pre>
+<h4 id="how-to-deploy-mkdocs-a-documentaion">How to deploy mkdocs, a documentaion</h4>
+<pre><code>source doc_venv/bin/activate
+</code></pre>
+<p>Then run</p>
+<pre><code> mkdocs gh-deploy
+</code></pre>
+<p>Wait for awhile, and go:</p>
+<pre><code class="language-bash"> https://hob1t.github.io/poirot/
+</code></pre>
+<h4 id="how-to-prepare-a-presentation">How to prepare a presentation</h4>
+<p><strong>Rule 1</strong>: Include only one idea per slide</p>
+<p><strong>Rule 2:</strong> Spend only 1 minute per slide</p>
+<p><strong>Rule 3:</strong> Make use of your heading</p>
+<p><strong>Rule 4:</strong> Include only essential points</p>
+<p><strong>Rule 5:</strong> Give credit, where credit is due</p>
+<p><strong>Rule 6:</strong> Use graphics effectively</p>
+<p><strong>Rule 7:</strong> Design to avoid cognitive overload</p>
+<p><strong>Rule 8:</strong> Design the slide so that a distracted person gets the main takeaway</p>
+<p><strong>Rule 9:</strong> Iteratively improve slide design through practice</p>
+<p><strong>Rule 10:</strong> Design to mitigate the impact of technical disasters</p>
+<p>References:</p>
+<p><a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009554">Ten simple rules for effective presentation slides</a></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../SDSM/" class="btn btn-neutral float-left" title="Software CI/CD"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../capstone_report/" class="btn btn-neutral float-right" title="Capstone Repost">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../capstone_report/" class="btn btn-neutral float-right" title="Capstone Report">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
