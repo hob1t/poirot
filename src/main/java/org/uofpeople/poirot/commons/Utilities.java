@@ -21,6 +21,7 @@ public final class Utilities {
 	 * Creates Person DMO from the {@link Graph}
 	 *
 	 * @param linkedInPerson
+	 *            an object from will be build DMO.
 	 * @return a {@link LIPersonDMO}
 	 */
 	public static LIPersonDMO buildFrom(Graph linkedInPerson, String liUrl) {
@@ -50,6 +51,10 @@ public final class Utilities {
 			personDMO.setLinkedInURL(liUrl);
 		}
 
+		if (linkedInPerson.getInteractionStatistic() != null) {
+			personDMO.setConnection(linkedInPerson.getInteractionStatistic().getUserInteractionCount());
+		}
+
 		return personDMO;
 	}
 
@@ -64,8 +69,11 @@ public final class Utilities {
 	 * Create {@link FBPersonDMO} object
 	 *
 	 * @param person
+	 *            an object will be built from.
 	 * @param query
-	 * @return
+	 *            containing first and last names.
+	 *
+	 * @return {@link FBPersonDMO}
 	 */
 	public static FBPersonDMO buildFrom(FBPerson person, String query) {
 		FBPersonDMO dmo = new FBPersonDMO();
@@ -112,7 +120,7 @@ public final class Utilities {
 	 *
 	 * @param input
 	 *            may be 3.1M, 30k etc.
-	 * @return
+	 * @return an int
 	 */
 	private static Integer checkAndParseInt(String input) {
 		if (NumberUtils.isDigits(input)) {
@@ -133,7 +141,7 @@ public final class Utilities {
 				if (checkAndParseFloat(toBe) != null) {
 					return checkAndParseFloat(toBe) * 1000000;
 				}
-				return (Integer.valueOf(toBe) * 1000000);
+				return (Integer.parseInt(toBe) * 1000000);
 			}
 		}
 		return -1;
@@ -143,7 +151,7 @@ public final class Utilities {
 	 * Converts float/double into rounded int.
 	 *
 	 * @param input
-	 * @return
+	 * @return an int
 	 */
 	private static Integer checkAndParseFloat(String input) {
 		if (input.contains(".")) {
