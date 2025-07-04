@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TruVerAck - Acknowledging Truth in the Digital Age</title>
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -31,35 +29,31 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-<!-- Header & Navigation -->
 <header class="bg-white shadow-sm sticky top-0 z-50">
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-        <!-- Logo -->
         <a href="#" class="text-2xl font-bold text-gray-900">
             TruVerAck
         </a>
-        <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-6">
             <a href="#problem" class="text-gray-600 hover:text-indigo-600 transition duration-300">The Problem</a>
             <a href="#solution" class="text-gray-600 hover:text-indigo-600 transition duration-300">Our Solution</a>
             <a href="#about" class="text-gray-600 hover:text-indigo-600 transition duration-300">About Us</a>
             <a href="#pricing" class="text-gray-600 hover:text-indigo-600 transition duration-300">Pricing</a>
+            <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition duration-300">Contact</a>
         </div>
-        <!-- CTA Button -->
         <a href="#pricing" class="hidden md:block bg-indigo-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-indigo-700 transition duration-300 shadow">
             Get Started
         </a>
-        <!-- Mobile Menu Button (Hamburger) -->
         <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
         </button>
     </nav>
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
         <a href="#problem" class="block py-2 text-gray-600 hover:text-indigo-600">The Problem</a>
         <a href="#solution" class="block py-2 text-gray-600 hover:text-indigo-600">Our Solution</a>
         <a href="#about" class="block py-2 text-gray-600 hover:text-indigo-600">About Us</a>
         <a href="#pricing" class="block py-2 text-gray-600 hover:text-indigo-600">Pricing</a>
+        <a href="#contact" class="block py-2 text-gray-600 hover:text-indigo-600">Contact</a>
         <a href="#pricing" class="block mt-2 bg-indigo-600 text-white text-center px-5 py-2 rounded-lg font-medium hover:bg-indigo-700 transition duration-300 shadow">
             Get Started
         </a>
@@ -67,7 +61,6 @@
 </header>
 
 <main>
-    <!-- Hero Section -->
     <section class="bg-white py-20 md:py-32">
         <div class="container mx-auto px-6 text-center fade-in">
             <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
@@ -82,7 +75,6 @@
         </div>
     </section>
 
-    <!-- The Problem Section -->
     <section id="problem" class="py-20">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
@@ -90,22 +82,18 @@
                 <p class="text-gray-600 mt-2 max-w-4xl mx-auto">Disinformation poses a real threat to the truth because it is spread quickly and widely, especially on social media platforms. Every individual can now become an information producer, creating a huge volume of information that is difficult for ordinary users to filter.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Horseman 1: Disinformation -->
                 <div class="bg-white p-8 rounded-xl shadow-md text-center">
                     <h3 class="text-xl font-bold mb-2">Disinformation</h3>
                     <p class="text-gray-600">Intentionally false information created to cause harm.</p>
                 </div>
-                <!-- Horseman 2: Misinformation -->
                 <div class="bg-white p-8 rounded-xl shadow-md text-center">
                     <h3 class="text-xl font-bold mb-2">Misinformation</h3>
                     <p class="text-gray-600">False information spread, regardless of intent to mislead.</p>
                 </div>
-                <!-- Horseman 3: Fake News -->
                 <div class="bg-white p-8 rounded-xl shadow-md text-center">
                     <h3 class="text-xl font-bold mb-2">Fake News</h3>
                     <p class="text-gray-600">False stories that appear to be news, spread on the internet or using other media.</p>
                 </div>
-                <!-- Horseman 4: Pseudoscience -->
                 <div class="bg-white p-8 rounded-xl shadow-md text-center">
                     <h3 class="text-xl font-bold mb-2">Pseudoscience</h3>
                     <p class="text-gray-600">Beliefs or practices mistakenly regarded as being based on scientific method.</p>
@@ -114,7 +102,6 @@
         </div>
     </section>
 
-    <!-- Our Solution Section -->
     <section id="solution" class="bg-white py-20">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
@@ -122,17 +109,14 @@
                 <p class="text-gray-600 mt-2">How we help you combat digital deception.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Solution 1 -->
                 <div class="bg-gray-100 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
                     <h3 class="text-xl font-bold mb-2">Fight Troll Armies</h3>
                     <p class="text-gray-600">We analyze and identify coordinated inauthentic behavior from troll farms and 'fake news'-for-profit networks.</p>
                 </div>
-                <!-- Solution 2 -->
                 <div class="bg-gray-100 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
                     <h3 class="text-xl font-bold mb-2">Burst the Filter Bubble</h3>
                     <p class="text-gray-600">Our tools help you break out of personalized content echo chambers to get a wider, more balanced view of information.</p>
                 </div>
-                <!-- Solution 3 -->
                 <div class="bg-gray-100 p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
                     <h3 class="text-xl font-bold mb-2">Acknowledge Truth</h3>
                     <p class="text-gray-600">By focusing on truthfulness and veracity, we provide tools to verify sources and acknowledge credible information.</p>
@@ -141,7 +125,6 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
     <section id="about" class="py-20">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What does TruVerAck stand for?</h2>
@@ -163,7 +146,6 @@
     </section>
 
 
-    <!-- Pricing Section -->
     <section id="pricing" class="bg-white py-20">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
@@ -171,7 +153,6 @@
                 <p class="text-gray-600 mt-2">Choose the plan that's right for you. No hidden fees.</p>
             </div>
             <div class="flex flex-col lg:flex-row justify-center items-center lg:items-end gap-8">
-                <!-- Pricing Plan 1: Basic -->
                 <div class="w-full max-w-sm bg-white p-8 rounded-xl shadow-md border border-gray-200">
                     <h3 class="text-xl font-bold text-center mb-2">Basic</h3>
                     <p class="text-center text-gray-600 mb-6">For small teams & starters</p>
@@ -183,7 +164,6 @@
                     </ul>
                     <button class="w-full bg-gray-200 text-gray-800 font-bold py-3 rounded-lg hover:bg-gray-300 transition duration-300">Choose Plan</button>
                 </div>
-                <!-- Pricing Plan 2: Pro (Featured) -->
                 <div class="w-full max-w-md bg-white p-8 rounded-xl shadow-lg border-2 border-indigo-600 relative">
                     <div class="absolute top-0 -mt-4 w-full text-center">
                         <span class="bg-indigo-600 text-white text-sm font-bold px-4 py-1 rounded-full">Most Popular</span>
@@ -199,7 +179,6 @@
                     </ul>
                     <button class="w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-md">Choose Plan</button>
                 </div>
-                <!-- Pricing Plan 3: Enterprise -->
                 <div class="w-full max-w-sm bg-white p-8 rounded-xl shadow-md border border-gray-200">
                     <h3 class="text-xl font-bold text-center mb-2">Enterprise</h3>
                     <p class="text-center text-gray-600 mb-6">For large-scale organizations</p>
@@ -209,13 +188,12 @@
                         <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Dedicated Account Manager</li>
                         <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Premium 24/7 Support</li>
                     </ul>
-                    <button class="w-full bg-gray-200 text-gray-800 font-bold py-3 rounded-lg hover:bg-gray-300 transition duration-300">Contact Sales</button>
+                    <a href="mailto:oleg@truverack.com?subject=Enterprise%20Plan%20Inquiry" class="w-full block text-center bg-gray-200 text-gray-800 font-bold py-3 rounded-lg hover:bg-gray-300 transition duration-300">Contact Sales</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Disclaimer Section -->
     <section id="disclaimer" class="bg-gray-200">
         <div class="container mx-auto px-6 py-12">
             <h2 class="text-2xl font-bold text-center text-gray-800">Disclaimer</h2>
@@ -232,10 +210,21 @@
 
 </main>
 
-<!-- Footer -->
-<footer class="bg-gray-800 text-gray-400">
+<footer id="contact" class="bg-gray-800 text-gray-400">
     <div class="container mx-auto px-6 py-8">
-        <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="max-w-xl mx-auto text-center mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Interested? Let's Talk.</h2>
+            <p class="text-gray-400 mb-8">Fill out the form below, and we'll get back to you as soon as possible.</p>
+            <form action="mailto:oleg@truverack.com" method="post" enctype="text/plain">
+                <div class="flex flex-col md:flex-row gap-4 mb-4">
+                    <input type="text" name="name" placeholder="Your Name" class="w-full bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                    <input type="email" name="email" placeholder="Your Email" class="w-full bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                </div>
+                <textarea name="message" placeholder="Your Message" rows="4" class="w-full bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required></textarea>
+                <button type="submit" class="mt-4 w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-md">Send Email</button>
+            </form>
+        </div>
+        <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div class="text-center md:text-left mb-4 md:mb-0">
                 <p class="text-lg font-semibold text-white">TruVerAck</p>
                 <p class="text-sm">© 2025 TruVerAck. All Rights Reserved.</p>
